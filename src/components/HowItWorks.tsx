@@ -5,16 +5,16 @@ const STEPS: Step[] = [
   {
     number: 1,
     icon: 'Download',
-    title: 'Descargá la app',
+    title: 'Descarga la app',
     description:
-      'Descargá el instalador para tu sistema operativo. No requiere registros ni cuentas.',
+      'Descarga el instalador para tu sistema operativo. No requiere registros ni cuentas.',
   },
   {
     number: 2,
     icon: 'Settings',
-    title: 'Configurá tu menú',
+    title: 'Configura tu menú',
     description:
-      'Agregá categorías, productos, precios y fotos desde el panel de administración. Todo visual, sin código.',
+      'Agrega categorías, productos, precios y fotos desde el panel de administración. Todo visual, sin código.',
   },
   {
     number: 3,

@@ -9,12 +9,12 @@ export function DownloadSection() {
         {/* Section header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-            Administrá desde{' '}
+            Administra desde{' '}
             <span className="text-primary">cualquier dispositivo</span>
           </h2>
           <p className="mt-4 text-text-secondary text-lg max-w-2xl mx-auto">
             El panel de administración también es accesible vía QR.
-            Gestioná tu menú desde la PC del local, tu celular o una tablet.
+            Gestiona tu menú desde la PC del local, tu celular o una tablet.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export function DownloadSection() {
           </div>
 
           {/* Mobile — admin mobile */}
-          <div className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px]">
+          <div className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px]">
             <MobileFrame
               src={`${import.meta.env.BASE_URL}screenshot-admin-mobile.png`}
               alt="Panel de administración en celular"
@@ -64,7 +64,7 @@ export function DownloadSection() {
         {/* CTA */}
         <div className="text-center">
           <p className="text-text-secondary text-sm sm:text-base mb-6 max-w-md mx-auto">
-            ¿Listo para digitalizar tu menú? Solicitalo y te paso todos los detalles.
+            ¿Listo para digitalizar tu menú? Solicítalo y te envío todos los detalles.
           </p>
           <ContactButton large />
         </div>

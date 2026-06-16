@@ -5,7 +5,7 @@ import path from 'node:path'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/menu-qr-electron_landing/',
+  base: '/menu-qr_landing/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

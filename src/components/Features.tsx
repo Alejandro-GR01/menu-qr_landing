@@ -12,7 +12,7 @@ const FEATURES: Feature[] = [
     icon: 'Zap',
     title: 'Rápido como un rayo',
     description:
-      'Cero latencia de red externa. Los cambios que hacés en el admin se ven al instante en los celulares de tus clientes.',
+      'Cero latencia de red externa. Los cambios que haces en el admin se ven al instante en los celulares de tus clientes.',
   },
   {
     icon: 'CreditCard',

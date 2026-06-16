@@ -17,7 +17,7 @@ export function Footer() {
             <div>
               <p className="text-text-primary text-sm font-semibold">Menu QR</p>
               <p className="text-text-secondary text-xs">
-                © {year} — Pago único, cero suscripciones
+                © {year} — Simple por diseño
               </p>
             </div>
           </div>
