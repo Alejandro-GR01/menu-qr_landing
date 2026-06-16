@@ -52,13 +52,14 @@ menu-qr-electron_landing/
 │   │
 │   └── components/
 │       ├── Navbar.tsx             # Sticky nav + CTA "Solicitar App"
-│       ├── Hero.tsx               # Screenshot preview + headline + CTA
+│       ├── Hero.tsx               # Headline + device mockups (laptop + mobile) + QR connector
 │       ├── ContactButton.tsx      # Botón de contacto directo (mailto)
 │       ├── Features.tsx           # 6 feature cards con Lucide icons
 │       ├── HowItWorks.tsx         # 4 pasos con timeline visual
 │       ├── Comparison.tsx         # Cloud vs Local comparison cards
 │       ├── TechStack.tsx          # 8 tech badges con tooltips
-│       ├── DownloadSection.tsx    # Contact section + screenshots admin
+│       ├── DeviceMockup.tsx       # SVG realistas: LaptopFrame + MobileFrame
+│       ├── DownloadSection.tsx    # Contact section + device mockups admin
 │       └── Footer.tsx             # Logo + copyright + contacto directo
 │
 ├── .agents/
@@ -99,9 +100,9 @@ menu-qr-electron_landing/
 ### Hero
 | Estado | Comportamiento |
 |--------|---------------|
-| Cargando | Animaciones fade-in secuenciales (app icon → headline → CTA → screenshot) |
-| Default | Muestra screenshot desktop en ≥md, mobile en <md |
-| Sin imagen | Fallback: no muestra screenshot (no debería pasar, está en public/) |
+| Cargando | Animaciones fade-in secuenciales (app icon → headline → CTA → mockups) |
+| Default | LaptopFrame (menú desktop) + QR connector + MobileFrame (menú mobile) |
+| Sin imagen | Fallback: SVG sin screenshot (no debería pasar, está en public/) |
 
 ### ContactButton
 | Estado | Comportamiento |
@@ -129,6 +130,15 @@ menu-qr-electron_landing/
 | Default | 3 columnas: cloud | VS | local. Local destacado con borde primary |
 | Mobile | Stack vertical: cloud → VS → local |
 
+### DeviceMockup
+
+| Componente | SVG Features |
+|------------|-------------|
+| **LaptopFrame** | Lid con bisel + teclado con teclas + trackpad + bisagra + cámara. Screenshot clip dentro de la pantalla |
+| **MobileFrame** | Body con botones laterales + Dynamic Island + cámara + home indicator. Screenshot clip dentro de la pantalla |
+
+Ambos SVGs usan `clipPath` para recortar el screenshot dentro del área de pantalla, gradientes para el acabado metálico, y `feDropShadow` para sombra.
+
 ### TechStack
 | Estado | Comportamiento |
 |--------|---------------|
@@ -138,8 +148,8 @@ menu-qr-electron_landing/
 ### DownloadSection
 | Estado | Comportamiento |
 |--------|---------------|
-| Default | ContactButton grande + screenshot admin |
-| Sin screenshot | Fallback: no muestra la imagen |
+| Default | ContactButton grande + LaptopFrame (admin desktop) + QR connector + MobileFrame (admin mobile) |
+| Sin screenshot | Fallback: SVG sin screenshot (no debería pasar) |
 
 ### Footer
 | Estado | Comportamiento |
