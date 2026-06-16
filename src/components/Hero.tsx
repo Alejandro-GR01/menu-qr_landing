@@ -1,5 +1,6 @@
 import { ContactButton } from '@/components/ContactButton'
-import { ArrowDown } from 'lucide-react'
+import { LaptopFrame, MobileFrame } from '@/components/DeviceMockup'
+import { ArrowDown, QrCode } from 'lucide-react'
 
 export function Hero() {
   return (
@@ -41,19 +42,40 @@ export function Hero() {
         </p>
       </div>
 
-      {/* Screenshot preview */}
-      <div className="relative z-10 mt-12 md:mt-16 w-full max-w-4xl animate-fade-in-up animate-delay-500">
-        <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/5">
-          <img
-            src={`${import.meta.env.BASE_URL}screenshot-menu-desktop.png`}
-            alt="Vista previa del menú digital"
-            className="w-full h-auto hidden md:block"
-          />
-          <img
-            src={`${import.meta.env.BASE_URL}screenshot-menu-mobile.png`}
-            alt="Vista previa del menú digital en mobile"
-            className="w-full h-auto md:hidden"
-          />
+      {/* Device mockups */}
+      <div className="relative z-10 mt-12 md:mt-16 w-full max-w-5xl animate-fade-in-up animate-delay-500">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 lg:gap-8">
+          {/* Laptop — menú público desktop */}
+          <div className="w-full max-w-md lg:max-w-lg">
+            <LaptopFrame
+              src={`${import.meta.env.BASE_URL}screenshot-menu-desktop.png`}
+              alt="Menú digital en PC"
+            />
+            <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">
+              Menú público desde cualquier PC
+            </p>
+          </div>
+
+          {/* QR connector */}
+          <div className="flex flex-col items-center gap-2 shrink-0">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center">
+              <QrCode className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
+            </div>
+            <span className="text-primary text-xs font-semibold tracking-wider uppercase">QR</span>
+            <div className="hidden md:block w-px h-8 bg-gradient-to-b from-primary/40 to-transparent" />
+            <div className="md:hidden h-px w-8 bg-gradient-to-r from-primary/40 to-transparent" />
+          </div>
+
+          {/* Mobile — menú público mobile */}
+          <div className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px]">
+            <MobileFrame
+              src={`${import.meta.env.BASE_URL}screenshot-menu-mobile.png`}
+              alt="Menú digital en celular"
+            />
+            <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">
+              Escaneá el QR y accedé al instante
+            </p>
+          </div>
         </div>
       </div>
 

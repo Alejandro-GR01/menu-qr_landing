@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Alejandro-GR01/menu-qr_landing/blob/main/public/icon.png">
+  <img alt="Menu QR" src="https://github.com/Alejandro-GR01/menu-qr_landing/blob/main/public/icon.png" width="64" height="64">
+</picture>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Menu QR — Landing Page
 
-Currently, two official plugins are available:
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub_Pages-222222?logo=githubpages&logoColor=white)](https://pages.github.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Landing page promocional de **Menu QR** — una app de escritorio que convierte cualquier PC en un servidor local de menú digital con QR. Sin internet, sin mensualidades, sin complicaciones.
 
-## React Compiler
+➡️ **Landing en vivo:** [Alejandro-GR01.github.io/menu-qr_landing](https://Alejandro-GR01.github.io/menu-qr_landing)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Capa | Tecnología |
+|------|-----------|
+| Framework | React 19 + TypeScript 6 |
+| Build | Vite 8 |
+| Estilos | Tailwind CSS v4 |
+| Icons | Lucide React |
+| Tipografía | Geist Variable |
+| Deploy | GitHub Actions → GitHub Pages |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Desarrollo
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm dev        # Dev server con HMR
+pnpm build      # Build producción → dist/
+pnpm preview    # Preview del build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+El deploy es automático via GitHub Actions al pushear a `main`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Screenshots
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Las capturas en `public/` fueron tomadas con Playwright desde la app Menu QR en desarrollo:
+
+| Archivo | Contenido |
+|---------|-----------|
+| `screenshot-menu-desktop.png` | Menú público en desktop (1280×900) |
+| `screenshot-menu-mobile.png` | Menú público en mobile (375×812) |
+| `screenshot-admin-desktop.png` | Panel de admin en desktop |
+| `screenshot-admin-mobile.png` | Panel de admin en mobile |
+
+## Proyecto Principal
+
+La app de escritorio promocionada vive en un repo privado. Para solicitar acceso:
+
+➡️ **Contacto:** [alejandrogr011231@gmail.com](mailto:alejandrogr011231@gmail.com?subject=Solicitud%20Menu%20QR)

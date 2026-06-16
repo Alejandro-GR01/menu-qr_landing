@@ -1,41 +1,72 @@
 import { ContactButton } from '@/components/ContactButton'
+import { LaptopFrame, MobileFrame } from '@/components/DeviceMockup'
+import { QrCode, Smartphone, Monitor } from 'lucide-react'
 
 export function DownloadSection() {
   return (
     <section id="contact" className="py-24 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-            Solicitar <span className="text-primary">Menu QR</span>
+            Administrá desde{' '}
+            <span className="text-primary">cualquier dispositivo</span>
           </h2>
-          <p className="mt-4 text-text-secondary text-lg">
-            Contactame y te paso la app para tu restaurante o bar
+          <p className="mt-4 text-text-secondary text-lg max-w-2xl mx-auto">
+            El panel de administración también es accesible vía QR.
+            Gestioná tu menú desde la PC del local, tu celular o una tablet.
           </p>
         </div>
 
-        {/* Main CTA */}
-        <div className="flex justify-center mb-16">
-          <ContactButton large />
-        </div>
-
-        {/* Admin screenshot preview */}
-        <div className="max-w-2xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/5">
-            <img
+        {/* Admin devices */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 lg:gap-10 mb-16">
+          {/* Laptop — admin desktop */}
+          <div className="w-full max-w-md lg:max-w-lg">
+            <LaptopFrame
               src={`${import.meta.env.BASE_URL}screenshot-admin-desktop.png`}
-              alt="Panel de administración"
-              className="w-full h-auto hidden md:block"
+              alt="Panel de administración en PC"
             />
-            <img
-              src={`${import.meta.env.BASE_URL}screenshot-admin-mobile.png`}
-              alt="Panel de administración en mobile"
-              className="w-full h-auto md:hidden"
-            />
+            <div className="flex items-center gap-2 justify-center mt-3">
+              <Monitor className="w-4 h-4 text-primary" />
+              <p className="text-text-secondary text-xs sm:text-sm">
+                Admin en desktop
+              </p>
+            </div>
           </div>
-          <p className="text-center text-text-secondary text-sm mt-4">
-            Panel de administración simple e intuitivo
+
+          {/* QR connector */}
+          <div className="flex flex-col items-center gap-2 shrink-0">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center">
+              <QrCode className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
+            </div>
+            <span className="text-primary text-xs font-semibold tracking-wider uppercase">
+              QR
+            </span>
+            <div className="hidden md:block w-px h-8 bg-gradient-to-b from-primary/40 to-transparent" />
+            <div className="md:hidden h-px w-8 bg-gradient-to-r from-primary/40 to-transparent" />
+          </div>
+
+          {/* Mobile — admin mobile */}
+          <div className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px]">
+            <MobileFrame
+              src={`${import.meta.env.BASE_URL}screenshot-admin-mobile.png`}
+              alt="Panel de administración en celular"
+            />
+            <div className="flex items-center gap-2 justify-center mt-3">
+              <Smartphone className="w-4 h-4 text-primary" />
+              <p className="text-text-secondary text-xs sm:text-sm">
+                Admin en mobile
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <p className="text-text-secondary text-sm sm:text-base mb-6 max-w-md mx-auto">
+            ¿Listo para digitalizar tu menú? Solicitalo y te paso todos los detalles.
           </p>
+          <ContactButton large />
         </div>
       </div>
     </section>
