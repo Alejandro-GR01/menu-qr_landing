@@ -1,6 +1,7 @@
-import { ContactButton } from '@/components/ContactButton'
-import { LaptopFrame, MobileFrame } from '@/components/DeviceMockup'
-import { QrCode, Smartphone, Monitor } from 'lucide-react'
+import { ContactButton } from "@/components/ContactButton";
+import { LaptopFrame, MobileFrame } from "@/components/DeviceMockup";
+import { getAvifSrc } from "@/lib/imageUtils";
+import { QrCode, Smartphone, Monitor } from "lucide-react";
 
 export function DownloadSection() {
   return (
@@ -9,21 +10,21 @@ export function DownloadSection() {
         {/* Section header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-            Administra desde{' '}
+            Administra desde{" "}
             <span className="text-primary">cualquier dispositivo</span>
           </h2>
           <p className="mt-4 text-text-secondary text-lg max-w-2xl mx-auto">
-            El panel de administración también es accesible vía QR.
-            Gestiona tu menú desde la PC del local, tu celular o una tablet.
+            El panel de administración también es accesible vía QR. Gestiona tu
+            menú desde la PC del local, tu celular o una tablet.
           </p>
         </div>
 
         {/* Admin devices */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 lg:gap-10 mb-16">
+        <div className="grid grid-rows-5 md:grid-cols-5 md:grid-rows-1  items-center justify-center gap-8 md:gap-6 lg:gap-10 mb-16">
           {/* Laptop — admin desktop */}
-          <div className="w-full max-w-md lg:max-w-lg">
+          <div className="row-span-2 md:row-span-1 md:col-span-2 w-full mx-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <LaptopFrame
-              src={`${import.meta.env.BASE_URL}screenshot-admin-desktop.png`}
+              src={getAvifSrc(`${import.meta.env.BASE_URL}screenshot-admin-desktop.png`)}
               alt="Panel de administración en PC"
             />
             <div className="flex items-center gap-2 justify-center mt-3">
@@ -47,9 +48,9 @@ export function DownloadSection() {
           </div>
 
           {/* Mobile — admin mobile */}
-          <div className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px]">
+          <div className=" mx-auto row-span-2 md:row-span-1 md:col-span-2 w-full max-w-[90px] sm:max-w-[120px] md:max-w-[150px] ">
             <MobileFrame
-              src={`${import.meta.env.BASE_URL}screenshot-admin-mobile.png`}
+              src={getAvifSrc(`${import.meta.env.BASE_URL}screenshot-admin-mobile.png`)}
               alt="Panel de administración en celular"
             />
             <div className="flex items-center gap-2 justify-center mt-3">
@@ -64,11 +65,12 @@ export function DownloadSection() {
         {/* CTA */}
         <div className="text-center">
           <p className="text-text-secondary text-sm sm:text-base mb-6 max-w-md mx-auto">
-            ¿Listo para digitalizar tu menú? Solicítalo y te envío todos los detalles.
+            ¿Listo para digitalizar tu menú? Solicítalo y te envío todos los
+            detalles.
           </p>
           <ContactButton large />
         </div>
       </div>
     </section>
-  )
+  );
 }

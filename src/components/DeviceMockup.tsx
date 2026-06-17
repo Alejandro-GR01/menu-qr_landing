@@ -1,12 +1,12 @@
 interface LaptopFrameProps {
-  src: string
-  alt: string
-  className?: string
+  src: string;
+  alt: string;
+  className?: string;
 }
 
-export function LaptopFrame({ src, alt, className = '' }: LaptopFrameProps) {
-  const clipId = `monitor-screen-${alt.replace(/\s/g, '')}`
-  const glassId = `monitor-glass-${alt.replace(/\s/g, '')}`
+export function LaptopFrame({ src, alt, className = "" }: LaptopFrameProps) {
+  const clipId = `monitor-screen-${alt.replace(/\s/g, "")}`;
+  const glassId = `monitor-glass-${alt.replace(/\s/g, "")}`;
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
@@ -15,7 +15,7 @@ export function LaptopFrame({ src, alt, className = '' }: LaptopFrameProps) {
         className="w-full h-auto"
         role="img"
         aria-label={alt}
-        style={{ filter: 'drop-shadow(0 12px 48px rgba(0,0,0,0.45))' }}
+        style={{ filter: "drop-shadow(0 12px 48px rgba(0,0,0,0.45))" }}
       >
         <defs>
           <clipPath id={clipId}>
@@ -31,13 +31,39 @@ export function LaptopFrame({ src, alt, className = '' }: LaptopFrameProps) {
         {/* === BASE (stand) === */}
 
         {/* Shadow below base */}
-        <rect x={280} y={527} width={240} height={8} rx={4} fill="#000" opacity="0.3" />
+        <rect
+          x={280}
+          y={527}
+          width={240}
+          height={8}
+          rx={4}
+          fill="#000"
+          opacity="0.3"
+        />
 
         {/* Base rectangle */}
-        <rect x={280} y={515} width={240} height={12} rx={6} fill="#181818" stroke="#2a2a2a" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" />
+        <rect
+          x={280}
+          y={515}
+          width={240}
+          height={12}
+          rx={6}
+          fill="#181818"
+          stroke="#2a2a2a"
+          strokeWidth={4}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
 
         {/* Stand neck */}
-        <path d="M 375 430 L 385 515 L 415 515 L 425 430" fill="#181818" stroke="#2a2a2a" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M 375 430 L 385 515 L 415 515 L 425 430"
+          fill="#181818"
+          stroke="#2a2a2a"
+          strokeWidth={4}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
 
         {/* LED indicator */}
         <circle cx={400} cy={424} r={2.5} fill="#2a2a2a" opacity="0.6" />
@@ -55,43 +81,72 @@ export function LaptopFrame({ src, alt, className = '' }: LaptopFrameProps) {
           href={src}
           x={112}
           y={92}
-          width={576}
-          height={326}
+          width={575}
+          height={425}
           clipPath={`url(#${clipId})`}
           preserveAspectRatio="xMidYMid slice"
         />
 
         {/* Glass reflection */}
-        <rect x={112} y={92} width={576} height={326} rx={10} fill={`url(#${glassId})`} pointerEvents="none" />
+        <rect
+          x={112}
+          y={92}
+          width={576}
+          height={326}
+          rx={10}
+          fill={`url(#${glassId})`}
+          pointerEvents="none"
+        />
 
         {/* Monitor bezel (outer frame) */}
-        <rect x={100} y={80} width={600} height={350} rx={18} fill="none" stroke="#333" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" />
+        <rect
+          x={100}
+          y={80}
+          width={600}
+          height={350}
+          rx={18}
+          fill="none"
+          stroke="#333"
+          strokeWidth={4}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
 
         {/* Monitor bezel (inner frame) */}
-        <rect x={112} y={92} width={576} height={326} rx={10} fill="none" stroke="#2a2a2a" strokeWidth={2} opacity="0.4" />
+        <rect
+          x={112}
+          y={92}
+          width={576}
+          height={326}
+          rx={10}
+          fill="none"
+          stroke="#2a2a2a"
+          strokeWidth={2}
+          opacity="0.4"
+        />
       </svg>
     </div>
-  )
+  );
 }
 
 interface MobileFrameProps {
-  src: string
-  alt: string
-  className?: string
+  src: string;
+  alt: string;
+  className?: string;
 }
 
-export function MobileFrame({ src, alt, className = '' }: MobileFrameProps) {
-  const clipId = `phone-screen-${alt.replace(/\s/g, '')}`
-  const glassId = `phone-glass-${alt.replace(/\s/g, '')}`
+export function MobileFrame({ src, alt, className = "" }: MobileFrameProps) {
+  const clipId = `phone-screen-${alt.replace(/\s/g, "")}`;
+  const glassId = `phone-glass-${alt.replace(/\s/g, "")}`;
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
       <svg
         viewBox="260 30 280 540"
-        className="w-full h-auto"
+        className="w-full h-auto max-h-full"
         role="img"
         aria-label={alt}
-        style={{ filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.5))' }}
+        style={{ filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.5))" }}
       >
         <defs>
           <clipPath id={clipId}>
@@ -131,23 +186,69 @@ export function MobileFrame({ src, alt, className = '' }: MobileFrameProps) {
           height={476}
           clipPath={`url(#${clipId})`}
           preserveAspectRatio="xMidYMid slice"
+          className="p-0.5"
         />
 
         {/* Glass reflection */}
-        <rect x={289} y={62} width={222} height={476} rx={34} fill={`url(#${glassId})`} pointerEvents="none" />
+        <rect
+          x={289}
+          y={62}
+          width={222}
+          height={476}
+          rx={34}
+          fill={`url(#${glassId})`}
+          pointerEvents="none"
+        />
 
         {/* Phone body outline */}
-        <rect x={277} y={50} width={246} height={500} rx={44} fill="none" stroke="#333" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" />
+        <rect
+          x={277}
+          y={50}
+          width={246}
+          height={500}
+          rx={44}
+          fill="none"
+          stroke="#333"
+          strokeWidth={4}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
 
         {/* Screen bezel (inner frame) */}
-        <rect x={289} y={62} width={222} height={476} rx={34} fill="none" stroke="#2a2a2a" strokeWidth={2} opacity="0.3" />
+        <rect
+          x={289}
+          y={62}
+          width={222}
+          height={476}
+          rx={34}
+          fill="none"
+          stroke="#2a2a2a"
+          strokeWidth={2}
+          opacity="0.3"
+        />
 
         {/* Notch / Dynamic Island */}
-        <rect x={365} y={78} width={70} height={14} rx={7} fill="#1a1a1a" opacity="0.85" />
+        <rect
+          x={365}
+          y={78}
+          width={70}
+          height={14}
+          rx={7}
+          fill="#1a1a1a"
+          opacity="0.85"
+        />
 
         {/* Home indicator */}
-        <rect x={360} y={524} width={80} height={5} rx={2.5} fill="#2a2a2a" opacity="0.7" />
+        <rect
+          x={360}
+          y={524}
+          width={80}
+          height={5}
+          rx={2.5}
+          fill="#2a2a2a"
+          opacity="0.7"
+        />
       </svg>
     </div>
-  )
+  );
 }

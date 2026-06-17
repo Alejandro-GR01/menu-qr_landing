@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import '@fontsource-variable/geist';
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
 
 @theme {
   --color-bg-primary: #0a0a0a;
@@ -10,8 +10,8 @@
   --color-text-primary: #fafafa;
   --color-text-secondary: #a0a0a0;
   --color-border: #2a2a2a;
-  --font-sans: 'Geist Variable', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: "Geist Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 @keyframes fade-in-up {
@@ -34,12 +34,25 @@
   }
 }
 
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @utility animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
 }
 
 @utility animate-fade-in {
   animation: fade-in 0.5s ease-out forwards;
+}
+
+@utility animate-fade-out {
+  animation: fade-out 0.5s ease-out forwards;
 }
 
 @utility animate-delay-0 {

@@ -1,40 +1,43 @@
-import { Download, Settings, QrCode, Smartphone } from 'lucide-react'
-import type { Step } from '@/types'
+import { Download, Settings, QrCode, Smartphone } from "lucide-react";
+import type { Step } from "@/types";
 
 const STEPS: Step[] = [
   {
     number: 1,
-    icon: 'Download',
-    title: 'Descarga la app',
+    icon: "Download",
+    title: "Descarga la app",
     description:
-      'Descarga el instalador para tu sistema operativo. No requiere registros ni cuentas.',
+      "Descarga el instalador para tu sistema operativo. No requiere registros ni cuentas.",
   },
   {
     number: 2,
-    icon: 'Settings',
-    title: 'Configura tu menú',
+    icon: "Settings",
+    title: "Configura tu menú",
     description:
-      'Agrega categorías, productos, precios y fotos desde el panel de administración. Todo visual, sin código.',
+      "Agrega categorías, productos y precios desde el panel de administración. Todo visual, sin código.",
   },
   {
     number: 3,
-    icon: 'QrCode',
-    title: 'Generá tu QR',
+    icon: "QrCode",
+    title: "Genera tu QR",
     description:
-      'La app genera automáticamente un código QR con acceso al menú público y al panel de admin.',
+      "La app genera automáticamente un código QR con acceso al menú público y al panel de admin.",
   },
   {
     number: 4,
-    icon: 'Smartphone',
-    title: 'Listo para tus clientes',
+    icon: "Smartphone",
+    title: "Listo para tus clientes",
     description:
-      'Imprimí el QR y ponelo en la mesa. Tus clientes lo escanean y ven el menú al instante.',
+      "Imprime el QR y ponlo en la mesa. Tus clientes lo escanean y ven el menú al instante.",
   },
-]
+];
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
-  Download, Settings, QrCode, Smartphone,
-}
+  Download,
+  Settings,
+  QrCode,
+  Smartphone,
+};
 
 export function HowItWorks() {
   return (
@@ -57,9 +60,12 @@ export function HowItWorks() {
 
           <div className="space-y-12">
             {STEPS.map((step) => {
-              const Icon = ICON_MAP[step.icon]
+              const Icon = ICON_MAP[step.icon];
               return (
-                <div key={step.number} className="relative flex items-start gap-6 md:gap-8">
+                <div
+                  key={step.number}
+                  className="relative flex items-start gap-6 md:gap-8"
+                >
                   {/* Number + icon */}
                   <div className="relative z-10 flex items-center justify-center w-16 h-16 shrink-0 rounded-2xl bg-bg-surface border-2 border-primary/30">
                     <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center">
@@ -78,11 +84,11 @@ export function HowItWorks() {
                     </p>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

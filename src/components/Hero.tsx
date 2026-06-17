@@ -1,6 +1,7 @@
-import { ContactButton } from '@/components/ContactButton'
-import { LaptopFrame, MobileFrame } from '@/components/DeviceMockup'
-import { ArrowDown, QrCode } from 'lucide-react'
+import { ContactButton } from "@/components/ContactButton";
+import { LaptopFrame, MobileFrame } from "@/components/DeviceMockup";
+import { AvifImg, getAvifSrc } from "@/lib/imageUtils";
+import { ArrowDown, QrCode } from "lucide-react";
 
 export function Hero() {
   return (
@@ -17,19 +18,21 @@ export function Hero() {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, #fafafa 1px, transparent 0)',
-            backgroundSize: '48px 48px',
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, #fafafa 1px, transparent 0)",
+            backgroundSize: "48px 48px",
           }}
         />
       </div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto">
-        {/* App icon */}
-        <img
+        {/* App icon — LCP candidate, eager */}
+        <AvifImg
           src={`${import.meta.env.BASE_URL}icon.png`}
           alt="Menu QR"
           className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl shadow-lg shadow-primary/10 mb-6 md:mb-8 animate-fade-in"
+          loading="eager"
         />
 
         {/* Headline */}
@@ -42,8 +45,8 @@ export function Hero() {
         {/* Subheadline */}
         <p className="mt-4 md:mt-6 text-base sm:text-lg md:text-xl text-text-secondary max-w-2xl animate-fade-in-up animate-delay-200">
           Sin internet, sin demoras, sin mensualidades. Una app de escritorio
-          que convierte tu menú en un QR — accesible desde cualquier celular
-          en la red local.
+          que convierte tu menú en un QR — accesible desde cualquier celular en
+          la red local.
         </p>
 
         {/* CTA */}
@@ -59,11 +62,11 @@ export function Hero() {
 
       {/* Device mockups */}
       <div className="relative z-10 mt-12 md:mt-16 w-full max-w-5xl animate-fade-in-up animate-delay-500">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-4 lg:gap-8">
+        <div className="grid grid-cols-1 grid-rows-5 md:grid-cols-5 md:grid-rows-1 items-center justify-center gap-6 md:gap-4 lg:gap-8">
           {/* Laptop — menú público desktop */}
-          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+          <div className="row-span-2 md:row-span-1 md:col-span-2 w-full mx-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <LaptopFrame
-              src={`${import.meta.env.BASE_URL}screenshot-menu-desktop.png`}
+              src={getAvifSrc(`${import.meta.env.BASE_URL}screenshot-menu-desktop.png`)}
               alt="Menú digital en PC"
             />
             <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">
@@ -83,10 +86,10 @@ export function Hero() {
             <div className="md:hidden h-px w-8 bg-gradient-to-r from-primary/40 to-transparent" />
           </div>
 
-          {/* Mobile — menú público mobile */}
-          <div className="w-full max-w-[160px] sm:max-w-[190px] md:max-w-[230px]">
+          {/* Mobile — menú público mobile — eager: above the fold */}
+          <div className="mx-auto row-span-2 md:row-span-1 md:col-span-2 w-full max-w-[90px] sm:max-w-[120px] md:max-w-[150px] ">
             <MobileFrame
-              src={`${import.meta.env.BASE_URL}screenshot-menu-mobile.png`}
+              src={getAvifSrc(`${import.meta.env.BASE_URL}screenshot-menu-mobile.png`)}
               alt="Menú digital en celular"
             />
             <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">
@@ -105,5 +108,5 @@ export function Hero() {
         <ArrowDown className="w-5 h-5 md:w-6 md:h-6" />
       </a>
     </section>
-  )
+  );
 }
