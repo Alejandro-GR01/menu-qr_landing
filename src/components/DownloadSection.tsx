@@ -1,11 +1,9 @@
 import { ContactButton } from "@/components/ContactButton";
 import { LaptopFrame, MobileFrame } from "@/components/DeviceMockup";
-import { useAvifSrc } from "@/lib/imageUtils";
 import { QrCode, Smartphone, Monitor } from "lucide-react";
 
 export function DownloadSection() {
-  const adminDesktopSrc = useAvifSrc(`${import.meta.env.BASE_URL}screenshot-admin-desktop.png`)
-  const adminMobileSrc = useAvifSrc(`${import.meta.env.BASE_URL}screenshot-admin-mobile.png`)
+  const baseUrl = import.meta.env.BASE_URL;
   return (
     <section id="contact" className="py-24 px-4">
       <div className="max-w-5xl mx-auto">
@@ -26,7 +24,7 @@ export function DownloadSection() {
           {/* Laptop — admin desktop */}
           <div className="row-span-2 md:row-span-1 md:col-span-2 w-full mx-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <LaptopFrame
-              src={adminDesktopSrc}
+              src={`${baseUrl}screenshot-admin-desktop.png`}
               alt="Panel de administración en PC"
             />
             <div className="flex items-center gap-2 justify-center mt-3">
@@ -52,7 +50,7 @@ export function DownloadSection() {
           {/* Mobile — admin mobile */}
           <div className=" mx-auto row-span-2 md:row-span-1 md:col-span-2 w-full max-w-[90px] sm:max-w-[120px] md:max-w-[150px] ">
             <MobileFrame
-              src={adminMobileSrc}
+              src={`${baseUrl}screenshot-admin-mobile.png`}
               alt="Panel de administración en celular"
             />
             <div className="flex items-center gap-2 justify-center mt-3">

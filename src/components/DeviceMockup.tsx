@@ -1,4 +1,7 @@
+import { useEffect, useRef, useState } from "react";
+
 interface LaptopFrameProps {
+  /** Ruta base (PNG). Se intenta AVIF primero, fallback automático a PNG. */
   src: string;
   alt: string;
   className?: string;
@@ -7,6 +10,24 @@ interface LaptopFrameProps {
 export function LaptopFrame({ src, alt, className = "" }: LaptopFrameProps) {
   const clipId = `monitor-screen-${alt.replace(/\s/g, "")}`;
   const glassId = `monitor-glass-${alt.replace(/\s/g, "")}`;
+  const avifSrc = src.replace(/\.(png|jpg|jpeg)$/i, ".avif");
+
+  const imgRef = useRef<SVGImageElement | null>(null);
+  const [currentSrc, setCurrentSrc] = useState(avifSrc);
+
+  // Reset a AVIF cuando cambia la imagen
+  useEffect(() => {
+    setCurrentSrc(avifSrc);
+  }, [avifSrc]);
+
+  // Si el browser no soporta AVIF, cae a PNG via onerror
+  useEffect(() => {
+    const el = imgRef.current;
+    if (!el) return;
+    const onError = () => setCurrentSrc(src);
+    el.addEventListener("error", onError);
+    return () => el.removeEventListener("error", onError);
+  }, [src]);
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
@@ -76,9 +97,10 @@ export function LaptopFrame({ src, alt, className = "" }: LaptopFrameProps) {
         {/* Screen background (black) */}
         <rect x={112} y={92} width={576} height={326} rx={10} fill="#000" />
 
-        {/* Screenshot */}
+        {/* Screenshot — intenta AVIF, fallback a PNG via onerror */}
         <image
-          href={src}
+          ref={imgRef}
+          href={currentSrc}
           x={112}
           y={92}
           width={575}
@@ -130,6 +152,7 @@ export function LaptopFrame({ src, alt, className = "" }: LaptopFrameProps) {
 }
 
 interface MobileFrameProps {
+  /** Ruta base (PNG). Se intenta AVIF primero, fallback automático a PNG. */
   src: string;
   alt: string;
   className?: string;
@@ -138,6 +161,24 @@ interface MobileFrameProps {
 export function MobileFrame({ src, alt, className = "" }: MobileFrameProps) {
   const clipId = `phone-screen-${alt.replace(/\s/g, "")}`;
   const glassId = `phone-glass-${alt.replace(/\s/g, "")}`;
+  const avifSrc = src.replace(/\.(png|jpg|jpeg)$/i, ".avif");
+
+  const imgRef = useRef<SVGImageElement | null>(null);
+  const [currentSrc, setCurrentSrc] = useState(avifSrc);
+
+  // Reset a AVIF cuando cambia la imagen
+  useEffect(() => {
+    setCurrentSrc(avifSrc);
+  }, [avifSrc]);
+
+  // Si el browser no soporta AVIF, cae a PNG via onerror
+  useEffect(() => {
+    const el = imgRef.current;
+    if (!el) return;
+    const onError = () => setCurrentSrc(src);
+    el.addEventListener("error", onError);
+    return () => el.removeEventListener("error", onError);
+  }, [src]);
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
@@ -177,16 +218,16 @@ export function MobileFrame({ src, alt, className = "" }: MobileFrameProps) {
         {/* Screen background (black) */}
         <rect x={289} y={62} width={222} height={476} rx={34} fill="#000" />
 
-        {/* Screenshot */}
+        {/* Screenshot — intenta AVIF, fallback a PNG via onerror */}
         <image
-          href={src}
+          ref={imgRef}
+          href={currentSrc}
           x={289}
           y={62}
           width={222}
           height={476}
           clipPath={`url(#${clipId})`}
           preserveAspectRatio="xMidYMid slice"
-          className="p-0.5"
         />
 
         {/* Glass reflection */}

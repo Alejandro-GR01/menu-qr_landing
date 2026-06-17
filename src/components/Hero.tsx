@@ -1,11 +1,10 @@
 import { ContactButton } from "@/components/ContactButton";
 import { LaptopFrame, MobileFrame } from "@/components/DeviceMockup";
-import { AvifImg, useAvifSrc } from "@/lib/imageUtils";
+import { AvifImg } from "@/lib/imageUtils";
 import { ArrowDown, QrCode } from "lucide-react";
 
 export function Hero() {
-  const menuDesktopSrc = useAvifSrc(`${import.meta.env.BASE_URL}screenshot-menu-desktop.png`)
-  const menuMobileSrc = useAvifSrc(`${import.meta.env.BASE_URL}screenshot-menu-mobile.png`)
+  const baseUrl = import.meta.env.BASE_URL;
   return (
     <section className="min-h-dvh flex flex-col items-center justify-center px-4 pt-24 pb-12 md:pb-16 relative overflow-hidden">
       {/* Background layers - centrado perfecto */}
@@ -68,7 +67,7 @@ export function Hero() {
           {/* Laptop — menú público desktop */}
           <div className="row-span-2 md:row-span-1 md:col-span-2 w-full mx-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <LaptopFrame
-              src={menuDesktopSrc}
+              src={`${baseUrl}screenshot-menu-desktop.png`}
               alt="Menú digital en PC"
             />
             <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">
@@ -91,7 +90,7 @@ export function Hero() {
           {/* Mobile — menú público mobile — eager: above the fold */}
           <div className="mx-auto row-span-2 md:row-span-1 md:col-span-2 w-full max-w-[90px] sm:max-w-[120px] md:max-w-[150px] ">
             <MobileFrame
-              src={menuMobileSrc}
+              src={`${baseUrl}screenshot-menu-mobile.png`}
               alt="Menú digital en celular"
             />
             <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">
