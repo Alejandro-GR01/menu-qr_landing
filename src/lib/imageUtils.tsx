@@ -3,20 +3,32 @@
  *
  * - AvifImg:      <picture> con AVIF + fallback + loading eager|lazy
  * - useAvifSrc:   hook que devuelve src .avif si el browser lo soporta
- * - getAvifSrc:   función síncrona optimista (canvas check, cacheada)
+ * - getAvifSrc:   función síncrona optimista (fallback sync, cacheada)
+ *
+ * DETECCIÓN DE AVIF:
+ *   Fase 1 (sync): canvas.toDataURL('image/avif')
+ *     → funciona cuando el browser PUEDE CODIFICAR AVIF
+ *   Fase 2 (async): new Image() con icon.avif real desde el servidor
+ *     → funciona cuando el browser PUEDE DECODIFICAR AVIF
+ *     → usa el mismo archivo que <picture> carga, el cache del HTTP lo hace instantáneo
+ *
+ *   Chromium:  no puede codificar AVIF (canvas falls back a PNG)
+ *              pero SÍ puede decodificar AVIF → Fase 2 confirma soporte
+ *   Safari:    puede codificar Y decodificar AVIF → Fase 1 inmediato
+ *   Firefox:   puede codificar Y decodificar AVIF → Fase 1 inmediato
  */
 
 import { useEffect, useState } from 'react'
 
-/* ─── AVIF support detection (two-phase: sync canvas + async Image API) ─── */
+/* ─── AVIF support detection (two-phase: sync canvas + async real AVIF) ─── */
 
 let _avifSupported: boolean | null = null
 let _avifPromise: Promise<boolean> | null = null
 
 /**
- * Sincrónico: usa canvas toDataURL (rápido, ~99% de los casos).
- * Si falla, lanza detección asíncrona vía Image() con AVIF mínimo real.
- * La promesa se cachea para no repetir.
+ * Sincrónico: usa canvas.toDataURL.
+ * Rápido, funciona en Safari y Firefox cuando pueden codificar AVIF.
+ * En Chromium falla (no puede codificar AVIF) → lanza async check.
  */
 function _checkAvifSync(): boolean {
   if (_avifSupported !== null) return _avifSupported
@@ -24,56 +36,50 @@ function _checkAvifSync(): boolean {
     const c = document.createElement('canvas')
     c.width = 1
     c.height = 1
-    const ctx = c.getContext('2d')
-    ctx!.fillRect(0, 0, 1, 1)
+    const ctx = c.getContext('2d')!
+    ctx.fillRect(0, 0, 1, 1)
     const data = c.toDataURL('image/avif')
-    // Asegura que sea un AVIF real, no un placeholder vacío
     if (data.startsWith('data:image/avif') && data.length > 50) {
       _avifSupported = true
       return true
     }
   } catch {}
-  // No estamos seguros → lanzamos async check pero devolvemos false por ahora
+  // Canvas falló → lanzamos async check con AVIF real
   _checkAvifAsync()
   return false
 }
 
 /**
- * Asíncrono: usa Image() con un AVIF real generado desde canvas.
- * Más confiable que toDataURL solo.
+ * Asíncrono: usa el AVIF real del servidor (icon.avif) para detectar soporte.
+ * 100% confiable porque prueba decodificación real AVIF, no codificación canvas.
+ *
+ * icon.avif se sirve desde el mismo dominio, <picture> ya lo precarga,
+ * así que el cache HTTP lo resuelve casi instantáneo.
  */
 function _checkAvifAsync(): Promise<boolean> {
   if (_avifPromise) return _avifPromise
 
+  // Obtenemos la base URL del entorno actual
+  const baseUrl = typeof document !== 'undefined'
+    ? document.querySelector('base')?.getAttribute('href') || import.meta.env.BASE_URL
+    : import.meta.env.BASE_URL
+
   _avifPromise = new Promise((resolve) => {
-    // Generamos un AVIF mínimo desde canvas (1x1 píxel)
-    const c = document.createElement('canvas')
-    c.width = 1
-    c.height = 1
-    const ctx = c.getContext('2d')!
-    ctx.fillRect(0, 0, 1, 1)
+    const img = new Image()
 
-    c.toBlob((blob) => {
-      if (!blob || blob.type !== 'image/avif') {
-        _avifSupported = false
-        resolve(false)
-        return
-      }
+    img.onload = () => {
+      _avifSupported = true
+      resolve(true)
+    }
 
-      const url = URL.createObjectURL(blob)
-      const img = new Image()
-      img.onload = () => {
-        _avifSupported = true
-        URL.revokeObjectURL(url)
-        resolve(true)
-      }
-      img.onerror = () => {
-        _avifSupported = false
-        URL.revokeObjectURL(url)
-        resolve(false)
-      }
-      img.src = url
-    }, 'image/avif', 0.5)
+    img.onerror = () => {
+      // Chrome 147+ NO soporta decodificación AVIF en Image() tampoco
+      _avifSupported = false
+      resolve(false)
+    }
+
+    // Cargamos el AVIF real que está en el servidor
+    img.src = `${baseUrl}icon.avif`
   })
 
   return _avifPromise
@@ -83,7 +89,7 @@ function _checkAvifAsync(): Promise<boolean> {
 
 /**
  * Devuelve la versión .avif si el browser probablemente lo soporta.
- * Falls back a PNG si no está confirmado todavía (se actualiza luego).
+ * Falls back a PNG si no está confirmado todavía (se actualiza vía useAvifSrc).
  *
  * Para SVG <image> contexts donde no podemos usar <picture>.
  */
@@ -95,7 +101,7 @@ export function getAvifSrc(src: string): string {
 
 /**
  * Hook que devuelve la versión .avif de un path.
- * Fase 1: render con PNG si canvas check falló
+ * Fase 1: render con PNG si canvas check falló (Chromium)
  * Fase 2: update a AVIF si Image API confirma soporte (re-render)
  */
 export function useAvifSrc(src: string): string {
