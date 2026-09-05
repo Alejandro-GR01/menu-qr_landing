@@ -5,3 +5,5 @@ dist/
 .claude/
 .kiro/
 *.tsbuildinfo
+/PRD-LANDING.md
+/page-structure.md

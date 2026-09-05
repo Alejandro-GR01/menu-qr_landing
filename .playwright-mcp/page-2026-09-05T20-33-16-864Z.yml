@@ -1,0 +1,158 @@
+- generic [ref=f6e3]:
+  - navigation "Navegación principal" [ref=f6e4]:
+    - generic [ref=f6e7]:
+      - link "Ir al inicio" [ref=f6e8] [cursor=pointer]:
+        - /url: /menu-qr_landing/
+      - button "Abrir menú" [ref=f6e10]
+  - main [ref=f6e12]:
+    - generic [ref=f6e14]:
+      - heading "Funcionalidades de Menu QR" [level=1] [ref=f6e15]
+      - paragraph [ref=f6e16]: Todo lo que la app de escritorio pone a tu alcance para administrar tu menú digital — sin internet, sin mensualidades.
+    - generic [ref=f6e18]:
+      - generic [ref=f6e19]:
+        - heading "Arrancas en 5 pasos" [level=2] [ref=f6e20]
+        - paragraph [ref=f6e21]: De la PC apagada a tu menú viviendo en los celulares de tus clientes — en menos tiempo del que piensas.
+      - list [ref=f6e22]:
+        - listitem [ref=f6e23]:
+          - generic [ref=f6e24]: "1"
+          - heading "Configuras tu local" [level=3] [ref=f6e31]
+          - paragraph [ref=f6e32]: Cargas el nombre, el logo y el fondo de tu negocio.
+        - listitem [ref=f6e33]:
+          - generic [ref=f6e34]: "2"
+          - heading "Armas las categorías" [level=3] [ref=f6e40]
+          - paragraph [ref=f6e41]: "Categorías con iconos: tragos, picadas, dulces y lo que quieras."
+        - listitem [ref=f6e42]:
+          - generic [ref=f6e43]: "3"
+          - heading "Cargas los productos" [level=3] [ref=f6e50]
+          - paragraph [ref=f6e51]: Productos con precios, descripciones y estado de disponibilidad.
+        - listitem [ref=f6e52]:
+          - generic [ref=f6e53]: "4"
+          - heading "Generas el QR del menú" [level=3] [ref=f6e61]
+          - paragraph [ref=f6e62]: Lo descargas, lo imprimes y lo cuelgas en las mesas.
+        - listitem [ref=f6e63]:
+          - generic [ref=f6e64]: "5"
+          - heading "Escanea y pruebas" [level=3] [ref=f6e72]
+          - paragraph [ref=f6e73]: Abres la app, escaneas el QR y miras el menú en tu celular.
+    - generic [ref=f6e75]:
+      - generic [ref=f6e76]:
+        - heading "Así funciona en tu local" [level=2] [ref=f6e77]
+        - paragraph [ref=f6e78]: Todo vive dentro de tu red local. Sin internet, sin servidores externos, sin mensualidades. Tu PC manda, tus clientes escanean, tus vendedores cobran.
+      - 'img "Diagrama de infraestructura: la PC del local actúa como servidor, el router WiFi crea la red local, los clientes escanean el QR y ven el menú en su celular, los vendedores cobran desde el POS y la impresora térmica imprime los tickets — todo sin internet" [ref=f6e81]':
+        - generic [ref=f6e83]:
+          - generic [ref=f6e88]: SIN INTERNET
+          - generic [ref=f6e89]: 100% offline
+        - generic [ref=f6e90]:
+          - generic [ref=f6e91]: "Conexiones de la impresora:"
+          - generic [ref=f6e92]: USB / Bluetooth a la PC
+          - generic [ref=f6e93]: Ethernet (TCP/IP) al router
+          - generic [ref=f6e94]: Por la red local (WiFi)
+        - generic [ref=f6e95]: Ethernet
+        - generic [ref=f6e98]: WiFi
+        - generic [ref=f6e100]: TCP/IP
+        - generic [ref=f6e102]: WiFi local
+        - generic [ref=f6e105]: WiFi local
+        - generic [ref=f6e108]: Ticket por red
+        - generic [ref=f6e111]:
+          - generic [ref=f6e114]: Menu QR
+          - generic [ref=f6e115]: :3000
+          - generic [ref=f6e119]: PC del Local
+        - generic [ref=f6e122]: Router WiFi
+        - generic [ref=f6e135]: Impresora Térmica
+        - generic [ref=f6e143]: Cliente
+        - generic [ref=f6e157]: Vendedor
+        - generic [ref=f6e171]: Escanea el QR → ve el menú
+        - generic [ref=f6e172]: Cobra POS → imprime ticket
+      - generic [ref=f6e173]:
+        - generic [ref=f6e174]:
+          - heading "Tu PC es el servidor" [level=3] [ref=f6e178]
+          - paragraph [ref=f6e179]: La app corre 24/7 en tu PC y sirve el menú en http://IP_LOCAL:3000. No necesitas hosting ni servidor externo.
+        - generic [ref=f6e180]:
+          - heading "Router = tu red local" [level=3] [ref=f6e186]
+          - paragraph [ref=f6e187]: El router WiFi crea la red interna. La PC se conecta por WiFi o cable Ethernet — ambas opciones funcionan.
+        - generic [ref=f6e188]:
+          - heading "Clientes escanean y listo" [level=3] [ref=f6e192]
+          - paragraph [ref=f6e193]: Escanean el QR en la mesa, abren el menú en el navegador y lo ven al instante. Sin apps, sin registros.
+        - generic [ref=f6e194]:
+          - heading "Tickets al toque" [level=3] [ref=f6e200]
+          - paragraph [ref=f6e201]: "El vendedor cobra desde el POS en su celular y la impresora térmica imprime el ticket al instante. Doble copia: cliente y barra."
+    - generic [ref=f6e204]:
+      - generic [ref=f6e205]:
+        - 'button "5 vistas Administración Vista completa del negocio: acceso, métricas, vendedores, ventas y respaldo. Ver" [pressed] [ref=f6e206] [cursor=pointer]':
+          - generic [ref=f6e207]: 5 vistas
+          - heading "Administración" [level=3] [ref=f6e213]
+          - paragraph [ref=f6e214]: "Vista completa del negocio: acceso, métricas, vendedores, ventas y respaldo."
+          - generic [ref=f6e215]: Ver
+        - 'button "4 vistas Puesta en marcha Dejas tu local listo en minutos: identidad, carta completa y el QR para las mesas. Ver" [ref=f6e218] [cursor=pointer]':
+          - generic [ref=f6e219]: 4 vistas
+          - heading "Puesta en marcha" [level=3] [ref=f6e225]
+          - paragraph [ref=f6e226]: "Dejas tu local listo en minutos: identidad, carta completa y el QR para las mesas."
+          - generic [ref=f6e227]: Ver
+        - 'button "4 vistas Cliente Todo lo que ve y usa quien escanea el QR: menú, promos y conexión al WiFi. Ver" [ref=f6e230] [cursor=pointer]':
+          - generic [ref=f6e231]: 4 vistas
+          - heading "Cliente" [level=3] [ref=f6e236]
+          - paragraph [ref=f6e237]: "Todo lo que ve y usa quien escanea el QR: menú, promos y conexión al WiFi."
+          - generic [ref=f6e238]: Ver
+        - 'button "3 vistas Operación diaria El día a día en el local: vendedores cobrando con el POS y emitiendo tickets. Ver" [ref=f6e241] [cursor=pointer]':
+          - generic [ref=f6e242]: 3 vistas
+          - heading "Operación diaria" [level=3] [ref=f6e248]
+          - paragraph [ref=f6e249]: "El día a día en el local: vendedores cobrando con el POS y emitiendo tickets."
+          - generic [ref=f6e250]: Ver
+      - generic [ref=f6e254]:
+        - button "Dashboard" [pressed] [ref=f6e255] [cursor=pointer]
+        - button "Login" [ref=f6e256] [cursor=pointer]
+        - button "Vendedores" [ref=f6e257] [cursor=pointer]
+        - button "Tickets" [ref=f6e258] [cursor=pointer]
+        - button "Backup / Restore" [ref=f6e259] [cursor=pointer]
+      - generic [ref=f6e260]:
+        - generic [ref=f6e261]:
+          - img "Dashboard — vista desktop" [ref=f6e264]
+          - img "Dashboard — vista mobile" [ref=f6e276]
+        - generic [ref=f6e288]:
+          - generic [ref=f6e289]:
+            - heading "Dashboard" [level=3] [ref=f6e290]
+            - generic [ref=f6e291]:
+              - generic [ref=f6e292]: admin
+              - generic [ref=f6e293]: dashboard
+          - paragraph [ref=f6e294]: "Panel principal con métricas del día: ventas, tickets y productos más vendidos."
+          - generic [ref=f6e295]:
+            - generic [ref=f6e296]:
+              - heading "Qué te permite hacer" [level=4] [ref=f6e297]
+              - list [ref=f6e298]:
+                - listitem [ref=f6e299]:
+                  - generic [ref=f6e303]: Ver ventas y montos del día de un vistazo
+                - listitem [ref=f6e304]:
+                  - generic [ref=f6e308]: Conocer la cantidad de tickets cerrados
+                - listitem [ref=f6e309]:
+                  - generic [ref=f6e313]: Identificar los productos más vendidos
+            - generic [ref=f6e314]:
+              - heading "Cómo se usa" [level=4] [ref=f6e315]
+              - list [ref=f6e316]:
+                - listitem [ref=f6e317]:
+                  - generic [ref=f6e318]: "1"
+                  - generic [ref=f6e319]: Ingresas como admin para abrir el dashboard.
+                - listitem [ref=f6e320]:
+                  - generic [ref=f6e321]: "2"
+                  - generic [ref=f6e322]: "Revisas los KPIs del día: ventas, tickets y promedios."
+                - listitem [ref=f6e323]:
+                  - generic [ref=f6e324]: "3"
+                  - generic [ref=f6e325]: Usas los rankings para decidir qué productos impulsar o reordenar.
+            - generic [ref=f6e326]:
+              - heading "Cuándo te sirve" [level=4] [ref=f6e327]
+              - paragraph [ref=f6e328]: Al cierre del día quieres saber cuánto se vendió sin abrir una planilla — el dashboard te da el total en segundos y te muestra qué plato se llevó más pedidos.
+    - generic [ref=f6e330]:
+      - paragraph [ref=f6e331]: ¿Quieres ver la app en acción? Contactas al desarrollador para una demo.
+      - button "Solicitar App" [ref=f6e332]
+  - contentinfo [ref=f6e336]:
+    - generic [ref=f6e338]:
+      - generic [ref=f6e339]:
+        - img "Menu QR" [ref=f6e341]
+        - generic [ref=f6e342]:
+          - paragraph [ref=f6e343]: Menu QR
+          - paragraph [ref=f6e344]: © 2026 — Simple por diseño
+      - navigation "Navegación del pie" [ref=f6e345]:
+        - link "Inicio" [ref=f6e346] [cursor=pointer]:
+          - /url: /menu-qr_landing/
+        - link "Funcionalidades" [ref=f6e347] [cursor=pointer]:
+          - /url: /menu-qr_landing/funcionalidades
+        - link "Contacto" [ref=f6e348] [cursor=pointer]:
+          - /url: /menu-qr_landing/contacto

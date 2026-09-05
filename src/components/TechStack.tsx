@@ -8,7 +8,7 @@ const TECH: TechBadge[] = [
   { name: 'TypeScript', description: 'Código tipado y seguro' },
   { name: 'Vite', description: 'Build rápido y moderno' },
   { name: 'Tailwind CSS', description: 'Estilos utilitarios' },
-  { name: 'TanStack Query', description: 'Sincronización de datos' },
+  { name: 'Node.js', description: 'Runtime JavaScript del escritorio' },
 ]
 
 export function TechStack() {

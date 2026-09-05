@@ -14,7 +14,7 @@ export function DownloadSection() {
             <span className="text-primary">cualquier dispositivo</span>
           </h2>
           <p className="mt-4 text-text-secondary text-lg max-w-2xl mx-auto">
-            El panel de administración también es accesible vía QR. Gestiona tu
+            El panel de administración también es accesible vía QR. Gestionas tu
             menú desde la PC del local, tu celular o una tablet.
           </p>
         </div>
@@ -65,7 +65,7 @@ export function DownloadSection() {
         {/* CTA */}
         <div className="text-center">
           <p className="text-text-secondary text-sm sm:text-base mb-6 max-w-md mx-auto">
-            ¿Listo para digitalizar tu menú? Solicítalo y te envío todos los
+            ¿Listo para digitalizar tu menú? Pides la app y te envío todos los
             detalles.
           </p>
           <ContactButton large />

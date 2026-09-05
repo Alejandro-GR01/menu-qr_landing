@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom";
 import { ContactButton } from "@/components/ContactButton";
 import { AvifImg } from "@/lib/imageUtils";
 import { Menu, X } from "lucide-react";
@@ -8,9 +9,9 @@ export function Navbar() {
   const [isClosing, setIsClosing] = useState(false);
 
   const navLinks = [
-    { href: "#features", label: "Características" },
-    { href: "#how-it-works", label: "Cómo funciona" },
-    { href: "#contact", label: "Solicitar App" },
+    { to: "/", label: "Inicio" },
+    { to: "/funcionalidades", label: "Funcionalidades" },
+    { to: "/contacto", label: "Contacto" },
   ];
 
   const closeModal = useCallback(() => {
@@ -19,7 +20,7 @@ export function Navbar() {
       setMobileOpen(false);
       setIsClosing(false);
     }, 200);
-  }, [mobileOpen, isClosing]);
+  }, []);
 
   return (
     <nav
@@ -30,8 +31,8 @@ export function Navbar() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative z-20 flex items-center justify-between h-16">
             {/* Logo */}
-            <a
-              href="#"
+            <Link
+              to="/"
               className="flex items-center gap-2.5 shrink-0"
               aria-label="Ir al inicio"
             >
@@ -44,22 +45,29 @@ export function Navbar() {
               <span className="text-text-primary font-bold text-lg hidden sm:block">
                 Menu QR
               </span>
-            </a>
+            </Link>
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm font-medium"
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.to === "/"}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors duration-200 ${
+                      isActive
+                        ? "text-primary"
+                        : "text-text-secondary hover:text-text-primary"
+                    }`
+                  }
                 >
                   {link.label}
-                </a>
+                </NavLink>
               ))}
             </div>
 
-            {/* Desktop CTA */}
+            {/* Desktop CTA -> form en /contacto */}
             <div className="hidden md:block">
               <ContactButton />
             </div>
@@ -88,23 +96,33 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.to === "/"}
                   onClick={() => setMobileOpen(false)}
-                  className="text-text-secondary hover:text-text-primary hover:bg-bg-surface transition-colors rounded-lg py-2.5 px-3 text-sm font-medium"
+                  className={({ isActive }) =>
+                    `transition-colors rounded-lg py-2.5 px-3 text-sm font-medium ${
+                      isActive
+                        ? "text-primary-text bg-bg-surface"
+                        : "text-text-secondary hover:text-text-primary hover:bg-bg-surface"
+                    }`
+                  }
                 >
                   {link.label}
-                </a>
+                </NavLink>
               ))}
               <div className="pt-2 px-3">
-                <ContactButton className="w-full justify-center" />
+                <ContactButton
+                  className="w-full justify-center"
+                  onClick={() => setMobileOpen(false)}
+                />
               </div>
             </div>
           </div>
           <div
             onClick={() => closeModal()}
-            className={`bg-black/5 backdrop-blur-xs absolute top-0 left-0 right-0   h-svh! z-10 animate-fade-in ${isClosing && "animate-fade-out"}`}
+            className={`bg-black/60 backdrop-blur-sm absolute top-0 left-0 right-0   h-svh! z-10 animate-fade-in ${isClosing && "animate-fade-out"}`}
           />
         </>
       )}

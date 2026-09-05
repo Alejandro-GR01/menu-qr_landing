@@ -1,0 +1,145 @@
+- generic [ref=f26e3]:
+  - navigation "Navegación principal" [ref=f26e4]:
+    - generic [ref=f26e7]:
+      - link "Ir al inicio" [ref=f26e8] [cursor=pointer]:
+        - /url: "#/"
+        - generic [ref=f26e10]: Menu QR
+      - generic [ref=f26e11]:
+        - link "Inicio" [ref=f26e12] [cursor=pointer]:
+          - /url: "#/"
+        - link "Funcionalidades" [ref=f26e13] [cursor=pointer]:
+          - /url: "#/funcionalidades"
+        - link "Contacto" [ref=f26e14] [cursor=pointer]:
+          - /url: "#/contacto"
+      - button "Solicitar App" [ref=f26e16]
+  - main [ref=f26e20]:
+    - generic [ref=f26e1410]:
+      - heading "Solicitas tu Menu QR" [level=1] [ref=f26e1411]
+      - paragraph [ref=f26e1412]: Me escribes y coordinamos la entrega del instalador para tu negocio. Sin complicaciones, sin costos recurrentes.
+      - button "Solicitar App" [ref=f26e1414]
+    - generic [ref=f26e1419]:
+      - heading "¿Cómo funciona el proceso?" [level=2] [ref=f26e1420]
+      - generic [ref=f26e1421]:
+        - generic [ref=f26e1422]:
+          - paragraph [ref=f26e1427]: Paso 1
+          - heading "Nos contactas" [level=3] [ref=f26e1428]
+          - paragraph [ref=f26e1429]: Escribes por email al desarrollador y cuentas tu necesidad.
+        - generic [ref=f26e1430]:
+          - paragraph [ref=f26e1435]: Paso 2
+          - heading "Recibes el instalador" [level=3] [ref=f26e1436]
+          - paragraph [ref=f26e1437]: Te envían el .exe para Windows, listo para instalar.
+        - generic [ref=f26e1438]:
+          - paragraph [ref=f26e1443]: Paso 3
+          - heading "Configuras tu menú" [level=3] [ref=f26e1444]
+          - paragraph [ref=f26e1445]: Abres la app, agregas categorías, productos y precios desde el panel visual.
+        - generic [ref=f26e1446]:
+          - paragraph [ref=f26e1451]: Paso 4
+          - heading "Listo para escanear" [level=3] [ref=f26e1452]
+          - paragraph [ref=f26e1453]: Generas el QR, lo pones en las mesas y tus clientes acceden al menú.
+    - generic [ref=f26e1455]:
+      - generic [ref=f26e1456]:
+        - heading "Administra desde cualquier dispositivo" [level=2] [ref=f26e1457]
+        - paragraph [ref=f26e1458]: El panel de administración también es accesible vía QR. Gestionas tu menú desde la PC del local, tu celular o una tablet.
+      - generic [ref=f26e1459]:
+        - generic [ref=f26e1460]:
+          - img "Panel de administración en PC" [ref=f26e1462]
+          - paragraph [ref=f26e1475]: Admin en desktop
+        - generic [ref=f26e1476]: QR
+        - generic [ref=f26e1486]:
+          - img "Panel de administración en celular" [ref=f26e1488]
+          - paragraph [ref=f26e1503]: Admin en mobile
+      - generic [ref=f26e1504]:
+        - paragraph [ref=f26e1505]: ¿Listo para digitalizar tu menú? Pides la app y te envío todos los detalles.
+        - button "Solicitar App" [ref=f26e1506]
+    - generic [ref=f26e1510]:
+      - generic [ref=f26e1511]:
+        - heading "Preguntas frecuentes" [level=2] [ref=f26e1512]
+        - paragraph [ref=f26e1513]: Todo lo que necesitas saber sobre Menu QR, en un solo lugar.
+      - generic [ref=f26e1514]:
+        - generic [ref=f26e1515]:
+          - button "¿Necesito conexión a internet?" [ref=f26e1516]
+          - region "¿Necesito conexión a internet?":
+            - paragraph [ref=f26e1520]: No. Todo funciona en la red local de tu negocio — la PC del local hace de servidor y los clientes se conectan por WiFi. Sin nube, sin dependencia de ningún servicio externo.
+        - generic [ref=f26e1521]:
+          - button "¿Necesito saber programar o instalar servidores?" [ref=f26e1522]
+          - region "¿Necesito saber programar o instalar servidores?":
+            - paragraph [ref=f26e1526]: No. Se descarga el instalador, se abre, y configuras el menú desde un panel visual intuitivo. Sin código, sin terminal, sin conocimientos técnicos.
+        - generic [ref=f26e1527]:
+          - button "¿Cómo acceden los clientes al menú?" [ref=f26e1528]
+          - region "¿Cómo acceden los clientes al menú?":
+            - paragraph [ref=f26e1532]: Escanean el QR que genera la app con la cámara de su celular. Sin apps, sin registros, sin datos personales. Abren el navegador y ven el menú al instante.
+        - generic [ref=f26e1533]:
+          - button "¿Cuánto cuesta? ¿Hay mensualidad?" [ref=f26e1534]
+          - region "¿Cuánto cuesta? ¿Hay mensualidad?":
+            - paragraph [ref=f26e1538]: Pago único. Sin suscripción, sin hosting, sin costos de servidor. Pagás una vez y la app es tuya para siempre.
+        - generic [ref=f26e1539]:
+          - button "¿Y si se corta el internet del local?" [ref=f26e1540]
+          - region "¿Y si se corta el internet del local?":
+            - paragraph [ref=f26e1544]: El menú sigue funcionando igual, porque se sirve desde la PC del local por la red local. Mientras haya luz y la PC esté encendida, todo funciona.
+        - generic [ref=f26e1545]:
+          - button "¿Cómo recibo la app?" [ref=f26e1546]
+          - region "¿Cómo recibo la app?":
+            - paragraph [ref=f26e1550]: Contactas por el email del desarrollador y te coordina la entrega del instalador para Windows (.exe). Lo instalas en la PC del local y en minutos tienes el menú funcionando.
+        - generic [ref=f26e1551]:
+          - button "¿Se puede imprimir tickets?" [ref=f26e1552]
+          - region "¿Se puede imprimir tickets?":
+            - paragraph [ref=f26e1556]: Sí. La app incluye un POS integrado que permite imprimir tickets de venta y cobro, incluso con impresora térmica.
+        - generic [ref=f26e1557]:
+          - button "¿Qué es el POS de vendedor?" [ref=f26e1558]
+          - region "¿Qué es el POS de vendedor?":
+            - paragraph [ref=f26e1562]: Es un punto de venta integrado para que el vendedor cobre desde su celular o tablet en la red local. Sin hardware adicional, sin suscripciones.
+    - generic [ref=f26e1564]:
+      - heading "¿Listo para digitalizar tu menú?" [level=2] [ref=f26e1565]
+      - paragraph [ref=f26e1566]: Un pago, sin mensualidades, sin internet. Escribes y te envío todo.
+      - button "Solicitar App" [ref=f26e1567]
+    - region [ref=f26e1572]:
+      - generic [ref=f26e1573]:
+        - generic [ref=f26e1574]:
+          - heading "Envías tu solicitud" [level=2] [ref=f26e1575]
+          - paragraph [ref=f26e1576]: "Cuentas sobre tu negocio: te llega el mail armado con todo, solo lo envías y coordinamos la entrega del instalador."
+        - generic [ref=f26e1577]:
+          - generic [ref=f26e1578]:
+            - generic [ref=f26e1579]:
+              - generic [ref=f26e1580]: Nombre
+              - textbox "Nombre" [ref=f26e1581]:
+                - /placeholder: Tu nombre y apellido
+            - generic [ref=f26e1582]:
+              - generic [ref=f26e1583]: Negocio / Nombre del local
+              - textbox "Negocio / Nombre del local" [ref=f26e1584]:
+                - /placeholder: "Ej: Bar La Esquina"
+            - generic [ref=f26e1585]:
+              - generic [ref=f26e1586]: Ciudad o país (opcional)
+              - textbox "Ciudad o país (opcional)" [ref=f26e1587]:
+                - /placeholder: "Ej: Buenos Aires, Argentina"
+            - generic [ref=f26e1588]:
+              - generic [ref=f26e1589]: ¿Qué te interesa?
+              - combobox "¿Qué te interesa?" [ref=f26e1590]:
+                - option "Solicitar Menu QR" [selected]
+                - option "Impresora térmica"
+                - option "Hardware / PC recomendada"
+                - option "Otra consulta"
+            - generic [ref=f26e1591]:
+              - generic [ref=f26e1592]: Mensaje
+              - textbox "Mensaje" [ref=f26e1593]:
+                - /placeholder: "Ej: Tengo un bar con 12 mesas y quiero menú digital. ¿Cómo funciona y cuánto tarda la instalación?"
+          - generic [ref=f26e1594]:
+            - button "Enviar solicitud" [ref=f26e1595]
+            - paragraph [ref=f26e1599]: Se abre tu aplicación de correo con el mensaje listo — solo tienes que presionar enviar.
+          - paragraph [ref=f26e1600]:
+            - text: ¿Prefieres escribir directo?
+            - link "alejandrogr011231@gmail.com" [ref=f26e1601] [cursor=pointer]:
+              - /url: mailto:alejandrogr011231@gmail.com
+  - contentinfo [ref=f26e289]:
+    - generic [ref=f26e291]:
+      - generic [ref=f26e292]:
+        - img "Menu QR" [ref=f26e294]
+        - generic [ref=f26e295]:
+          - paragraph [ref=f26e296]: Menu QR
+          - paragraph [ref=f26e297]: © 2026 — Simple por diseño
+      - navigation "Navegación del pie" [ref=f26e298]:
+        - link "Inicio" [ref=f26e299] [cursor=pointer]:
+          - /url: "#/"
+        - link "Funcionalidades" [ref=f26e300] [cursor=pointer]:
+          - /url: "#/funcionalidades"
+        - link "Contacto" [ref=f26e301] [cursor=pointer]:
+          - /url: "#/contacto"

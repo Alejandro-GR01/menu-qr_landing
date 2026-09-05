@@ -1,4 +1,11 @@
+import { Link } from "react-router-dom";
 import { AvifImg } from "@/lib/imageUtils";
+
+const navLinks = [
+  { to: "/", label: "Inicio" },
+  { to: "/funcionalidades", label: "Funcionalidades" },
+  { to: "/contacto", label: "Contacto" },
+];
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -22,6 +29,22 @@ export function Footer() {
               </p>
             </div>
           </div>
+
+          {/* Nav links */}
+          <nav
+            aria-label="Navegación del pie"
+            className="flex items-center gap-6"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm font-medium"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

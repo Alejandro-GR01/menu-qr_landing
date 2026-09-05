@@ -1,0 +1,170 @@
+- generic [ref=f17e3]:
+  - navigation "Navegación principal" [ref=f17e4]:
+    - generic [ref=f17e7]:
+      - link "Ir al inicio" [ref=f17e8] [cursor=pointer]:
+        - /url: "#/"
+      - button "Abrir menú" [ref=f17e10]
+  - main [ref=f17e12]:
+    - generic [ref=f17e14]:
+      - heading "Funcionalidades de Menu QR" [level=1] [ref=f17e15]
+      - paragraph [ref=f17e16]: Todo lo que la app de escritorio pone a tu alcance para administrar tu menú digital — sin internet, sin mensualidades.
+    - generic [ref=f17e18]:
+      - generic [ref=f17e19]:
+        - heading "Arrancas en 5 pasos" [level=2] [ref=f17e20]
+        - paragraph [ref=f17e21]: De la PC apagada a tu menú viviendo en los celulares de tus clientes — en menos tiempo del que piensas.
+      - list [ref=f17e22]:
+        - listitem [ref=f17e23]:
+          - generic [ref=f17e24]: "1"
+          - heading "Configuras tu local" [level=3] [ref=f17e31]
+          - paragraph [ref=f17e32]: Cargas el nombre, el logo y el fondo de tu negocio.
+        - listitem [ref=f17e33]:
+          - generic [ref=f17e34]: "2"
+          - heading "Armas las categorías" [level=3] [ref=f17e40]
+          - paragraph [ref=f17e41]: "Categorías con iconos: tragos, picadas, dulces y lo que quieras."
+        - listitem [ref=f17e42]:
+          - generic [ref=f17e43]: "3"
+          - heading "Cargas los productos" [level=3] [ref=f17e50]
+          - paragraph [ref=f17e51]: Productos con precios, descripciones y estado de disponibilidad.
+        - listitem [ref=f17e52]:
+          - generic [ref=f17e53]: "4"
+          - heading "Generas el QR del menú" [level=3] [ref=f17e61]
+          - paragraph [ref=f17e62]: Lo descargas, lo imprimes y lo cuelgas en las mesas.
+        - listitem [ref=f17e63]:
+          - generic [ref=f17e64]: "5"
+          - heading "Escanea y pruebas" [level=3] [ref=f17e72]
+          - paragraph [ref=f17e73]: Abres la app, escaneas el QR y miras el menú en tu celular.
+    - generic [ref=f17e75]:
+      - generic [ref=f17e76]:
+        - heading "Así funciona en tu local" [level=2] [ref=f17e77]
+        - paragraph [ref=f17e78]: Todo vive dentro de tu red local. Sin internet, sin servidores externos, sin mensualidades. Tu PC manda, tus clientes escanean, tus vendedores cobran.
+      - 'img "Diagrama de infraestructura: la PC del local actúa como servidor, el router WiFi crea la red local, los clientes escanean el QR y ven el menú en su celular, los vendedores cobran desde el POS y la impresora térmica imprime los tickets — todo sin internet" [ref=f17e81]':
+        - generic [ref=f17e84]: 100% LOCAL
+        - generic [ref=f17e85]: Sin internet
+        - generic [ref=f17e86]:
+          - generic [ref=f17e89]: Menu QR
+          - generic [ref=f17e90]: :3000
+          - generic [ref=f17e94]: PC del Local
+          - generic [ref=f17e95]: Servidor 0.0.0.0:3000
+        - generic [ref=f17e96]:
+          - generic [ref=f17e106]: Router WiFi
+          - generic [ref=f17e107]: Red local
+        - generic [ref=f17e108]:
+          - generic [ref=f17e119]: Cliente
+          - generic [ref=f17e120]: Escanea QR
+        - generic [ref=f17e121]:
+          - generic [ref=f17e132]: Vendedor
+          - generic [ref=f17e133]: POS
+        - generic [ref=f17e134]:
+          - generic [ref=f17e139]: Impresora Térmica
+          - generic [ref=f17e140]: 58/80mm
+        - generic [ref=f17e141]: Ethernet
+        - generic [ref=f17e144]: WiFi
+        - generic [ref=f17e146]: WiFi local
+        - generic [ref=f17e149]: Escaneas QR → ves el menú
+        - generic [ref=f17e150]: WiFi local
+        - generic [ref=f17e153]: Cobra POS → imprime ticket
+        - generic [ref=f17e154]: Ticket por red
+        - generic [ref=f17e157]: Recibe ticket
+        - generic [ref=f17e158]: TCP/IP
+        - generic [ref=f17e161]: USB / Bluetooth
+        - generic [ref=f17e163]:
+          - generic [ref=f17e164]: "Conexiones de la impresora:"
+          - generic [ref=f17e165]: USB / Bluetooth a la PC
+          - generic [ref=f17e166]: Ethernet (TCP/IP) al router
+          - generic [ref=f17e167]: Por la red local (WiFi)
+        - generic [ref=f17e168]:
+          - generic [ref=f17e173]: SIN INTERNET
+          - generic [ref=f17e174]: 100% offline
+      - generic [ref=f17e175]:
+        - generic [ref=f17e176]:
+          - heading "Tu PC es el servidor" [level=3] [ref=f17e180]
+          - paragraph [ref=f17e181]: La app corre 24/7 en tu PC y sirve el menú en http://IP_LOCAL:3000. No necesitas hosting ni servidor externo.
+        - generic [ref=f17e182]:
+          - heading "Router = tu red local" [level=3] [ref=f17e188]
+          - paragraph [ref=f17e189]: El router WiFi crea la red interna. La PC se conecta por WiFi o cable Ethernet — ambas opciones funcionan.
+        - generic [ref=f17e190]:
+          - heading "Clientes escanean y listo" [level=3] [ref=f17e194]
+          - paragraph [ref=f17e195]: Escanean el QR en la mesa, abren el menú en el navegador y lo ven al instante. Sin apps, sin registros.
+        - generic [ref=f17e196]:
+          - heading "Tickets al toque" [level=3] [ref=f17e202]
+          - paragraph [ref=f17e203]: "El vendedor cobra desde el POS en su celular y la impresora térmica imprime el ticket al instante. Doble copia: cliente y barra."
+    - generic [ref=f17e206]:
+      - generic [ref=f17e207]:
+        - 'button "4 vistas Puesta en marcha Dejas tu local listo en minutos: identidad, carta completa y el QR para las mesas. Ver" [pressed] [ref=f17e208] [cursor=pointer]':
+          - generic [ref=f17e209]: 4 vistas
+          - heading "Puesta en marcha" [level=3] [ref=f17e215]
+          - paragraph [ref=f17e216]: "Dejas tu local listo en minutos: identidad, carta completa y el QR para las mesas."
+          - generic [ref=f17e217]: Ver
+        - 'button "4 vistas Cliente Todo lo que ve y usa quien escanea el QR: menú, promos y conexión al WiFi. Ver" [ref=f17e220] [cursor=pointer]':
+          - generic [ref=f17e221]: 4 vistas
+          - heading "Cliente" [level=3] [ref=f17e226]
+          - paragraph [ref=f17e227]: "Todo lo que ve y usa quien escanea el QR: menú, promos y conexión al WiFi."
+          - generic [ref=f17e228]: Ver
+        - 'button "3 vistas Operación diaria El día a día en el local: vendedores cobrando con el POS y emitiendo tickets. Ver" [ref=f17e231] [cursor=pointer]':
+          - generic [ref=f17e232]: 3 vistas
+          - heading "Operación diaria" [level=3] [ref=f17e238]
+          - paragraph [ref=f17e239]: "El día a día en el local: vendedores cobrando con el POS y emitiendo tickets."
+          - generic [ref=f17e240]: Ver
+        - 'button "5 vistas Administración Vista completa del negocio: acceso, métricas, vendedores, ventas y respaldo. Ver" [ref=f17e243] [cursor=pointer]':
+          - generic [ref=f17e244]: 5 vistas
+          - heading "Administración" [level=3] [ref=f17e250]
+          - paragraph [ref=f17e251]: "Vista completa del negocio: acceso, métricas, vendedores, ventas y respaldo."
+          - generic [ref=f17e252]: Ver
+      - generic [ref=f17e256]:
+        - button "Configuración + Promos" [pressed] [ref=f17e257] [cursor=pointer]
+        - button "Categorías" [ref=f17e258] [cursor=pointer]
+        - button "Productos" [ref=f17e259] [cursor=pointer]
+        - button "Vista previa del Menú" [ref=f17e260] [cursor=pointer]
+      - generic [ref=f17e261]:
+        - generic [ref=f17e262]:
+          - img "Configuración + Promos — vista desktop" [ref=f17e265]
+          - img "Configuración + Promos — vista mobile" [ref=f17e277]
+        - generic [ref=f17e289]:
+          - generic [ref=f17e290]:
+            - heading "Configuración + Promos" [level=3] [ref=f17e291]
+            - generic [ref=f17e292]:
+              - generic [ref=f17e293]: admin
+              - generic [ref=f17e294]: configuración
+          - paragraph [ref=f17e295]: Configuración del local (nombre, logo, fondo) y gestión de promociones activas.
+          - generic [ref=f17e296]:
+            - generic [ref=f17e297]:
+              - heading "Qué te permite hacer" [level=4] [ref=f17e298]
+              - list [ref=f17e299]:
+                - listitem [ref=f17e300]:
+                  - generic [ref=f17e304]: Configurar el nombre del local que se muestra en el menú
+                - listitem [ref=f17e305]:
+                  - generic [ref=f17e309]: Subir tu logo y elegir la imagen de fondo
+                - listitem [ref=f17e310]:
+                  - generic [ref=f17e314]: Crear y gestionar promociones activas del menú
+            - generic [ref=f17e315]:
+              - heading "Cómo se usa" [level=4] [ref=f17e316]
+              - list [ref=f17e317]:
+                - listitem [ref=f17e318]:
+                  - generic [ref=f17e319]: "1"
+                  - generic [ref=f17e320]: Andas a Configuración desde el panel admin.
+                - listitem [ref=f17e321]:
+                  - generic [ref=f17e322]: "2"
+                  - generic [ref=f17e323]: Cargas el nombre, el logo y el fondo de tu local.
+                - listitem [ref=f17e324]:
+                  - generic [ref=f17e325]: "3"
+                  - generic [ref=f17e326]: Creas una promoción y la activas para que aparezca en el menú público.
+            - generic [ref=f17e327]:
+              - heading "Cuándo te sirve" [level=4] [ref=f17e328]
+              - paragraph [ref=f17e329]: El día que reinauguras con un logo nuevo o quieres lanzar un “2x1 en tragos”, lo cambias acá y el menú que ven tus clientes se actualiza al instante — sin reimprimir nada.
+    - generic [ref=f17e331]:
+      - paragraph [ref=f17e332]: ¿Quieres ver la app en acción? Contactas al desarrollador para una demo.
+      - button "Solicitar App" [ref=f17e333]
+  - contentinfo [ref=f17e337]:
+    - generic [ref=f17e339]:
+      - generic [ref=f17e340]:
+        - img "Menu QR" [ref=f17e342]
+        - generic [ref=f17e343]:
+          - paragraph [ref=f17e344]: Menu QR
+          - paragraph [ref=f17e345]: © 2026 — Simple por diseño
+      - navigation "Navegación del pie" [ref=f17e346]:
+        - link "Inicio" [ref=f17e347] [cursor=pointer]:
+          - /url: "#/"
+        - link "Funcionalidades" [ref=f17e348] [cursor=pointer]:
+          - /url: "#/funcionalidades"
+        - link "Contacto" [ref=f17e349] [cursor=pointer]:
+          - /url: "#/contacto"

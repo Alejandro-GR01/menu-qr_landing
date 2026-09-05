@@ -15,11 +15,6 @@ export function LaptopFrame({ src, alt, className = "" }: LaptopFrameProps) {
   const imgRef = useRef<SVGImageElement | null>(null);
   const [currentSrc, setCurrentSrc] = useState(avifSrc);
 
-  // Reset a AVIF cuando cambia la imagen
-  useEffect(() => {
-    setCurrentSrc(avifSrc);
-  }, [avifSrc]);
-
   // Si el browser no soporta AVIF, cae a PNG via onerror
   useEffect(() => {
     const el = imgRef.current;
@@ -103,10 +98,10 @@ export function LaptopFrame({ src, alt, className = "" }: LaptopFrameProps) {
           href={currentSrc}
           x={112}
           y={92}
-          width={575}
-          height={425}
+          width={576}
+          height={326}
           clipPath={`url(#${clipId})`}
-          preserveAspectRatio="xMidYMid slice"
+          preserveAspectRatio="xMinYMin slice"
         />
 
         {/* Glass reflection */}
@@ -166,11 +161,6 @@ export function MobileFrame({ src, alt, className = "" }: MobileFrameProps) {
   const imgRef = useRef<SVGImageElement | null>(null);
   const [currentSrc, setCurrentSrc] = useState(avifSrc);
 
-  // Reset a AVIF cuando cambia la imagen
-  useEffect(() => {
-    setCurrentSrc(avifSrc);
-  }, [avifSrc]);
-
   // Si el browser no soporta AVIF, cae a PNG via onerror
   useEffect(() => {
     const el = imgRef.current;
@@ -227,7 +217,7 @@ export function MobileFrame({ src, alt, className = "" }: MobileFrameProps) {
           width={222}
           height={476}
           clipPath={`url(#${clipId})`}
-          preserveAspectRatio="xMidYMid slice"
+          preserveAspectRatio="xMinYMin slice"
         />
 
         {/* Glass reflection */}

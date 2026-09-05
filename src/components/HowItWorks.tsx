@@ -5,21 +5,21 @@ const STEPS: Step[] = [
   {
     number: 1,
     icon: "Download",
-    title: "Descarga la app",
+    title: "Descargas la app",
     description:
-      "Descarga el instalador para tu sistema operativo. No requiere registros ni cuentas.",
+      "Bajas el instalador para tu sistema operativo. No requiere registros ni cuentas.",
   },
   {
     number: 2,
     icon: "Settings",
-    title: "Configura tu menú",
+    title: "Configuras tu menú",
     description:
-      "Agrega categorías, productos y precios desde el panel de administración. Todo visual, sin código.",
+      "Agregas categorías, productos y precios desde el panel de administración. Todo visual, sin código.",
   },
   {
     number: 3,
     icon: "QrCode",
-    title: "Genera tu QR",
+    title: "Generas tu QR",
     description:
       "La app genera automáticamente un código QR con acceso al menú público y al panel de admin.",
   },
@@ -28,7 +28,7 @@ const STEPS: Step[] = [
     icon: "Smartphone",
     title: "Listo para tus clientes",
     description:
-      "Imprime el QR y ponlo en la mesa. Tus clientes lo escanean y ven el menú al instante.",
+      "Imprimes el QR y lo pones en la mesa. Tus clientes lo escanean y ven el menú al instante.",
   },
 ];
 
@@ -68,10 +68,10 @@ export function HowItWorks() {
                 >
                   {/* Number + icon */}
                   <div className="relative z-10 flex items-center justify-center w-16 h-16 shrink-0 rounded-2xl bg-bg-surface border-2 border-primary/30">
-                    <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center">
+                    <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-primary-solid text-white text-[10px] font-bold flex items-center justify-center">
                       {step.number}
                     </span>
-                    {Icon && <Icon className="w-6 h-6 text-primary" />}
+                    {Icon && <Icon className="w-6 h-6 text-primary-text" />}
                   </div>
 
                   {/* Content */}

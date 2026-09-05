@@ -1,0 +1,189 @@
+- generic [ref=f26e3]:
+  - navigation "Navegación principal" [ref=f26e4]:
+    - generic [ref=f26e7]:
+      - link "Ir al inicio" [ref=f26e8] [cursor=pointer]:
+        - /url: "#/"
+        - generic [ref=f26e10]: Menu QR
+      - generic [ref=f26e11]:
+        - link "Inicio" [ref=f26e12] [cursor=pointer]:
+          - /url: "#/"
+        - link "Funcionalidades" [ref=f26e13] [cursor=pointer]:
+          - /url: "#/funcionalidades"
+        - link "Contacto" [ref=f26e14] [cursor=pointer]:
+          - /url: "#/contacto"
+      - button "Solicitar App" [ref=f26e16]
+  - main [ref=f26e20]:
+    - generic [ref=f26e21]:
+      - generic [ref=f26e22]:
+        - img "Menu QR" [ref=f26e24]
+        - heading "Tu menú digital, siempre disponible" [level=1] [ref=f26e25]: Tu menú digital,siempre disponible
+        - paragraph [ref=f26e26]: Sin internet, sin demoras, sin mensualidades. Una app de escritorio que convierte tu menú en un QR — accesible desde cualquier celular en la red WiFi de tu negocio.
+        - button "Solicitar App" [ref=f26e28]
+        - paragraph [ref=f26e32]: Pago único · Sin registros · Listo en minutos
+      - generic [ref=f26e34]:
+        - generic [ref=f26e35]:
+          - img "Menú digital en PC" [ref=f26e37]
+          - paragraph [ref=f26e47]: Menú público desde cualquier PC
+        - generic [ref=f26e48]: QR
+        - generic [ref=f26e58]:
+          - img "Menú digital en celular" [ref=f26e60]
+          - paragraph [ref=f26e72]: Escaneas el QR al instante
+      - link "Scroll para ver características" [ref=f26e73] [cursor=pointer]:
+        - /url: "#features"
+    - generic [ref=f26e77]:
+      - generic [ref=f26e78]:
+        - heading "¿Por qué Menu QR?" [level=2] [ref=f26e79]
+        - paragraph [ref=f26e80]: Pensado para restaurantes que necesitan algo que simplemente funcione.
+      - generic [ref=f26e81]:
+        - generic [ref=f26e82]:
+          - heading "Sin internet necesario" [level=3] [ref=f26e88]
+          - paragraph [ref=f26e89]: El menú se sirve desde tu PC a la red local. Si se corta internet, el menú sigue funcionando al instante.
+        - generic [ref=f26e90]:
+          - heading "Rápido como un rayo" [level=3] [ref=f26e94]
+          - paragraph [ref=f26e95]: Cero latencia de red externa. Los cambios que haces en el admin se ven al instante en los celulares de tus clientes.
+        - generic [ref=f26e96]:
+          - heading "Pago único, cero suscripciones" [level=3] [ref=f26e100]
+          - paragraph [ref=f26e101]: Pagas una vez y la app es tuya para siempre. Sin cuotas mensuales, sin costos de hosting, sin sorpresas.
+        - generic [ref=f26e102]:
+          - heading "Tus datos, tu PC" [level=3] [ref=f26e106]
+          - paragraph [ref=f26e107]: Toda la información de tu menú, configuraciones e imágenes se guardan localmente. Nada de servidores externos.
+        - generic [ref=f26e108]:
+          - heading "Configuración simple" [level=3] [ref=f26e113]
+          - paragraph [ref=f26e114]: Descargas, abres y ya está. Categorías, productos, fotos y precios se administran desde un panel visual e intuitivo.
+        - generic [ref=f26e115]:
+          - heading "Accesible desde cualquier celular" [level=3] [ref=f26e119]
+          - paragraph [ref=f26e120]: Tus clientes escanean el QR con la cámara de su celular — sin apps, sin registros, al instante.
+    - generic [ref=f26e122]:
+      - generic [ref=f26e123]:
+        - heading "Cómo funciona" [level=2] [ref=f26e124]
+        - paragraph [ref=f26e125]: De la descarga a la primera mesa escaneando en menos de 5 minutos
+      - generic [ref=f26e128]:
+        - generic [ref=f26e129]:
+          - generic [ref=f26e130]: "1"
+          - generic [ref=f26e135]:
+            - heading "Descargas la app" [level=3] [ref=f26e136]
+            - paragraph [ref=f26e137]: Bajas el instalador para tu sistema operativo. No requiere registros ni cuentas.
+        - generic [ref=f26e138]:
+          - generic [ref=f26e139]: "2"
+          - generic [ref=f26e144]:
+            - heading "Configuras tu menú" [level=3] [ref=f26e145]
+            - paragraph [ref=f26e146]: Agregas categorías, productos y precios desde el panel de administración. Todo visual, sin código.
+        - generic [ref=f26e147]:
+          - generic [ref=f26e148]: "3"
+          - generic [ref=f26e156]:
+            - heading "Generas tu QR" [level=3] [ref=f26e157]
+            - paragraph [ref=f26e158]: La app genera automáticamente un código QR con acceso al menú público y al panel de admin.
+        - generic [ref=f26e159]:
+          - generic [ref=f26e160]: "4"
+          - generic [ref=f26e164]:
+            - heading "Listo para tus clientes" [level=3] [ref=f26e165]
+            - paragraph [ref=f26e166]: Imprimes el QR y lo pones en la mesa. Tus clientes lo escanean y ven el menú al instante.
+    - generic [ref=f26e168]:
+      - generic [ref=f26e169]:
+        - heading "Papel, nube, o tu propia PC" [level=2] [ref=f26e170]
+        - paragraph [ref=f26e171]: Compara las tres opciones y elige la que mejor se adapte a tu negocio
+      - table [ref=f26e173]:
+        - rowgroup [ref=f26e174]:
+          - row [ref=f26e175]:
+            - columnheader "Aspecto qué comparar" [ref=f26e176]:
+              - text: Aspecto
+              - generic [ref=f26e177]: qué comparar
+            - columnheader "📋 Menú de Papel" [ref=f26e178]
+            - columnheader "☁️ Menú Online" [ref=f26e179]
+            - columnheader "🖥️ Menu QR + Electron Recomendado" [ref=f26e180]:
+              - generic [ref=f26e181]:
+                - generic [ref=f26e182]: 🖥️ Menu QR + Electron
+                - generic [ref=f26e183]: Recomendado
+        - rowgroup [ref=f26e184]:
+          - row [ref=f26e185]:
+            - cell "Actualizar precios" [ref=f26e186]
+            - cell "Reimprimir todo" [ref=f26e187]
+            - cell "Al instante" [ref=f26e188]
+            - cell "Al instante" [ref=f26e189]
+          - row [ref=f26e194]:
+            - cell "Costo mensual" [ref=f26e195]
+            - cell "Imprenta en cada cambio" [ref=f26e196]
+            - cell "Suscripción + hosting" [ref=f26e197]
+            - cell "Pago único" [ref=f26e198]
+          - row [ref=f26e203]:
+            - cell "Funciona sin internet" [ref=f26e204]
+            - cell "Siempre" [ref=f26e205]
+            - cell "No" [ref=f26e206]
+            - cell "100%" [ref=f26e207]
+          - row [ref=f26e212]:
+            - cell "Acceso desde celular" [ref=f26e213]
+            - cell "Foto del menú" [ref=f26e214]
+            - cell "Escanean QR" [ref=f26e215]
+            - cell "Escanean QR" [ref=f26e216]
+          - row [ref=f26e221]:
+            - cell "Tiempo de carga" [ref=f26e222]
+            - cell "Inmediato" [ref=f26e223]
+            - cell "1-3 seg" [ref=f26e224]
+            - cell "< 100ms" [ref=f26e225]
+          - row [ref=f26e230]:
+            - cell "Privacidad de datos" [ref=f26e231]
+            - cell "En el local" [ref=f26e232]
+            - cell "En servidor externo" [ref=f26e233]
+            - cell "En tu PC" [ref=f26e234]
+          - row [ref=f26e239]:
+            - cell "Configuración" [ref=f26e240]
+            - cell "Diseñador gráfico" [ref=f26e241]
+            - cell "Registro web + API keys" [ref=f26e242]
+            - cell "Descargas, abres, listo" [ref=f26e243]
+          - row [ref=f26e248]:
+            - cell "Actualización remota" [ref=f26e249]
+            - cell "Ir al local" [ref=f26e250]
+            - cell "Desde cualquier lado" [ref=f26e251]
+            - cell "Desde cualquier dispositivo en la red" [ref=f26e252]
+      - paragraph [ref=f26e257]:
+        - generic [ref=f26e258]: Pago único, sin mensualidades
+        - generic [ref=f26e260]: 100% offline
+        - generic [ref=f26e262]: POS con impresión térmica
+        - generic [ref=f26e264]: QR servido desde tu PC
+    - generic [ref=f26e267]:
+      - generic [ref=f26e268]:
+        - heading "Tecnologías que la potencian" [level=2] [ref=f26e269]
+        - paragraph [ref=f26e270]: Stack moderno, robusto y 100% offline
+      - generic [ref=f26e271]:
+        - generic [ref=f26e272]:
+          - text: Electron
+          - tooltip "App de escritorio multiplataforma"
+        - generic [ref=f26e273]:
+          - text: React
+          - tooltip "Interfaz de usuario moderna"
+        - generic [ref=f26e274]:
+          - text: Express
+          - tooltip "Servidor web embebido"
+        - generic [ref=f26e275]:
+          - text: SQLite
+          - tooltip "Base de datos local"
+        - generic [ref=f26e276]:
+          - text: TypeScript
+          - tooltip "Código tipado y seguro"
+        - generic [ref=f26e277]:
+          - text: Vite
+          - tooltip "Build rápido y moderno"
+        - generic [ref=f26e278]:
+          - text: Tailwind CSS
+          - tooltip "Estilos utilitarios"
+        - generic [ref=f26e279]:
+          - text: TanStack Query
+          - tooltip "Sincronización de datos"
+    - generic [ref=f26e281]:
+      - heading "¿Listo para digitalizar tu menú?" [level=2] [ref=f26e282]
+      - paragraph [ref=f26e283]: Contactas al desarrollador para recibir la app en tu sistema operativo.
+      - button "Solicitar App" [ref=f26e285]
+  - contentinfo [ref=f26e289]:
+    - generic [ref=f26e291]:
+      - generic [ref=f26e292]:
+        - img "Menu QR" [ref=f26e294]
+        - generic [ref=f26e295]:
+          - paragraph [ref=f26e296]: Menu QR
+          - paragraph [ref=f26e297]: © 2026 — Simple por diseño
+      - navigation "Navegación del pie" [ref=f26e298]:
+        - link "Inicio" [ref=f26e299] [cursor=pointer]:
+          - /url: "#/"
+        - link "Funcionalidades" [ref=f26e300] [cursor=pointer]:
+          - /url: "#/funcionalidades"
+        - link "Contacto" [ref=f26e301] [cursor=pointer]:
+          - /url: "#/contacto"

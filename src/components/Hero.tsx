@@ -47,7 +47,7 @@ export function Hero() {
         <p className="mt-4 md:mt-6 text-base sm:text-lg md:text-xl text-text-secondary max-w-2xl animate-fade-in-up animate-delay-200">
           Sin internet, sin demoras, sin mensualidades. Una app de escritorio
           que convierte tu menú en un QR — accesible desde cualquier celular en
-          la red local.
+          la red WiFi de tu negocio.
         </p>
 
         {/* CTA */}
@@ -57,7 +57,7 @@ export function Hero() {
 
         {/* Secondary CTA */}
         <p className="mt-3 md:mt-4 text-xs sm:text-sm text-text-secondary animate-fade-in-up animate-delay-400">
-          Pago único · Sin registros · Listo en 2 minutos
+          Pago único · Sin registros · Listo en minutos
         </p>
       </div>
 
@@ -78,9 +78,9 @@ export function Hero() {
           {/* QR connector */}
           <div className="flex flex-col items-center gap-2 shrink-0">
             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center">
-              <QrCode className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
+              <QrCode className="w-6 h-6 sm:w-7 sm:h-7 text-primary-text" />
             </div>
-            <span className="text-primary text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase">
+            <span className="text-primary-text text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase">
               QR
             </span>
             <div className="hidden md:block w-px h-8 bg-gradient-to-b from-primary/40 to-transparent" />
@@ -94,7 +94,7 @@ export function Hero() {
               alt="Menú digital en celular"
             />
             <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">
-              Escanea el QR al instante
+              Escaneas el QR al instante
             </p>
           </div>
         </div>

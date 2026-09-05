@@ -1,0 +1,4 @@
+[      59ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/menu-qr_landing/node_modules/.vite/deps/react-dom_client.js?v=215ffcc6:14336
+[  182217ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5173/menu-qr_landing/src/components/Infrastructure.tsx?t=1788636848521:0
+[  182217ms] [ERROR] [vite] Failed to reload /src/components/Infrastructure.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/menu-qr_landing/@vite/client:928
+[ 1736772ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/menu-qr_landing/node_modules/.vite/deps/react-dom_client.js?v=215ffcc6:14336

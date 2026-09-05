@@ -1,0 +1,193 @@
+- generic [ref=e26]:
+  - generic [ref=e29]:
+    - button "Alternar barra lateral" [ref=e31]:
+      - img "Menu QR" [ref=e32]
+      - generic [ref=e33]: Menu QR
+    - generic [ref=e34]:
+      - list [ref=e36]:
+        - listitem [ref=e37]:
+          - link "Dashboard" [ref=e38] [cursor=pointer]:
+            - /url: /admin/dashboard
+      - generic [ref=e45]:
+        - generic [ref=e46]: Menú
+        - list [ref=e47]:
+          - listitem [ref=e48]:
+            - link "Configuración" [ref=e49] [cursor=pointer]:
+              - /url: /admin/config
+          - listitem [ref=e54]:
+            - link "Promociones" [ref=e55] [cursor=pointer]:
+              - /url: /admin/promotions
+          - listitem [ref=e60]:
+            - link "Categorías" [ref=e61] [cursor=pointer]:
+              - /url: /admin/categories
+          - listitem [ref=e67]:
+            - link "Productos" [ref=e68] [cursor=pointer]:
+              - /url: /admin/products
+          - listitem [ref=e80]:
+            - link "Vista Previa" [ref=e81] [cursor=pointer]:
+              - /url: /admin/menu
+          - listitem [ref=e86]:
+            - link "QR" [ref=e87] [cursor=pointer]:
+              - /url: /admin/qr
+      - generic [ref=e95]:
+        - generic [ref=e96]: Gestión
+        - list [ref=e97]:
+          - listitem [ref=e98]:
+            - link "Vendedores" [ref=e99] [cursor=pointer]:
+              - /url: /admin/sellers
+          - listitem [ref=e106]:
+            - link "Tickets" [ref=e107] [cursor=pointer]:
+              - /url: /admin/tickets
+          - listitem [ref=e112]:
+            - link "Impresora" [ref=e113] [cursor=pointer]:
+              - /url: /admin/printer
+      - generic [ref=e119]:
+        - generic [ref=e120]: Sistema
+        - list [ref=e121]:
+          - listitem [ref=e122]:
+            - link "Datos" [ref=e123] [cursor=pointer]:
+              - /url: /admin/db
+    - generic [ref=e130]:
+      - generic [ref=e131]:
+        - text: Menu QR
+        - generic [ref=e132]: v2.0.0
+      - generic [ref=e133]: Alejandro Guzman Rodriguez
+      - generic [ref=e134]:
+        - generic [ref=e135]: alejandrogr01dev@gmail.com
+        - link "GitHub de Alejandro-GR01" [ref=e140] [cursor=pointer]:
+          - /url: https://github.com/Alejandro-GR01
+          - generic [ref=e143]: alejandro-gr01
+      - generic [ref=e144]:
+        - generic [ref=e145]: ©
+        - generic [ref=e146]: 2026 Menú QR | Todos los derechos reservados.
+  - main [ref=e147]:
+    - generic [ref=e149]:
+      - heading "Panel de Administración" [level=1] [ref=e152]
+      - generic [ref=e153]:
+        - button "admin" [ref=e154]
+        - button "Cerrar sesión" [ref=e156]
+    - main [ref=e158]:
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - heading "Dashboard" [level=1] [ref=e161]
+          - generic [ref=e162]:
+            - status [ref=e163]: Actualizado 10:34 AM
+            - button "Actualizar" [ref=e164]
+        - generic [ref=e165]:
+          - group "Ventas hoy" [ref=e166]:
+            - paragraph [ref=e168]: Ventas hoy
+            - paragraph [ref=e174]: $0,00
+            - paragraph [ref=e176]:
+              - generic [ref=e180]: −100%
+              - generic [ref=e181]: vs ayer
+              - generic [ref=e182]: 100% menos que ayer
+          - group "Tickets hoy" [ref=e183]:
+            - paragraph [ref=e185]: Tickets hoy
+            - paragraph [ref=e191]: "0"
+            - paragraph [ref=e193]:
+              - generic [ref=e197]: −100%
+              - generic [ref=e198]: vs ayer
+              - generic [ref=e199]: 100% menos que ayer
+          - group "Productos activos" [ref=e200]:
+            - paragraph [ref=e202]: Productos activos
+            - paragraph [ref=e209]: "81"
+            - paragraph [ref=e211]: de 9 categorías
+          - group "Usuarios activos hoy" [ref=e212]:
+            - generic [ref=e213]:
+              - paragraph [ref=e214]: Usuarios activos hoy
+              - generic "0 de 2 usuarios activos hoy" [ref=e215]:
+                - img "Usuarios activos hoy" [ref=e218]
+                - generic: "0"
+              - paragraph [ref=e223]: de 2 disponibles
+        - generic [ref=e224]:
+          - generic [ref=e226]:
+            - paragraph [ref=e227]: Ventas por semana
+            - img "Ventas por semana" [ref=e230]:
+              - generic [aria-hidden] [ref=e236]:
+                - generic [ref=e237]: 13-19/jul
+                - generic [ref=e238]: 20-26/jul
+                - generic [ref=e239]: 27-2/jul
+                - generic [ref=e240]: 3-9/ago
+                - generic [ref=e241]: 10-16/ago
+                - generic [ref=e242]: 17-23/ago
+                - generic [ref=e243]: 24-30/ago
+                - generic [ref=e244]: 31-6/ago
+          - generic [ref=e246]:
+            - heading "Últimos tickets" [level=2] [ref=e248]
+            - generic [ref=e249]:
+              - button "T04092600007 Administrador · 0 elementos $12.000,00 04/09 2:24 PM" [ref=e250]:
+                - generic [ref=e251]:
+                  - generic [ref=e252]: T04092600007
+                  - generic [ref=e253]: Administrador · 0 elementos
+                - generic [ref=e254]:
+                  - generic [ref=e255]: $12.000,00
+                  - generic [ref=e256]: 04/09 2:24 PM
+              - button "T04092600006 Administrador · 0 elementos $34.500,00 04/09 2:19 PM" [ref=e257]:
+                - generic [ref=e258]:
+                  - generic [ref=e259]: T04092600006
+                  - generic [ref=e260]: Administrador · 0 elementos
+                - generic [ref=e261]:
+                  - generic [ref=e262]: $34.500,00
+                  - generic [ref=e263]: 04/09 2:19 PM
+              - button "T04092600005 Administrador · 0 elementos $5.400,00 04/09 2:19 PM" [ref=e264]:
+                - generic [ref=e265]:
+                  - generic [ref=e266]: T04092600005
+                  - generic [ref=e267]: Administrador · 0 elementos
+                - generic [ref=e268]:
+                  - generic [ref=e269]: $5.400,00
+                  - generic [ref=e270]: 04/09 2:19 PM
+              - button "T04092600004 Administrador · 0 elementos $22.900,00 04/09 2:18 PM" [ref=e271]:
+                - generic [ref=e272]:
+                  - generic [ref=e273]: T04092600004
+                  - generic [ref=e274]: Administrador · 0 elementos
+                - generic [ref=e275]:
+                  - generic [ref=e276]: $22.900,00
+                  - generic [ref=e277]: 04/09 2:18 PM
+              - button "T04092600003 Administrador · 0 elementos $2.700,00 04/09 2:18 PM" [ref=e278]:
+                - generic [ref=e279]:
+                  - generic [ref=e280]: T04092600003
+                  - generic [ref=e281]: Administrador · 0 elementos
+                - generic [ref=e282]:
+                  - generic [ref=e283]: $2.700,00
+                  - generic [ref=e284]: 04/09 2:18 PM
+            - link "Ver todos los tickets" [ref=e285] [cursor=pointer]:
+              - /url: /admin/tickets
+        - generic [ref=e289]:
+          - heading "Productos más vendidos" [level=2] [ref=e290]
+          - table [ref=e292]:
+            - rowgroup [ref=e293]:
+              - row [ref=e294]:
+                - columnheader "Producto" [ref=e295]
+                - columnheader "Categoría" [ref=e296]
+                - columnheader "Precio" [ref=e297]
+                - columnheader "Estado" [ref=e298]
+            - rowgroup [ref=e299]:
+              - row [ref=e300]:
+                - cell "Entremés de Chorizo y Queso" [ref=e301]
+                - cell "Tapas" [ref=e303]
+                - cell "$1.500,00" [ref=e304]
+                - cell "Disponible" [ref=e305]
+              - row [ref=e308]:
+                - cell "Croquetas de pollo" [ref=e309]
+                - cell "Tapas" [ref=e311]
+                - cell "$600,00" [ref=e312]
+                - cell "Disponible" [ref=e313]
+              - row [ref=e316]:
+                - cell "Entremés de Jamón y Queso" [ref=e317]
+                - cell "Tapas" [ref=e319]
+                - cell "$1.500,00" [ref=e320]
+                - cell "Disponible" [ref=e321]
+              - row [ref=e324]:
+                - cell "Entremes de chorizo" [ref=e325]
+                - cell "Tapas" [ref=e327]
+                - cell "$600,00" [ref=e328]
+                - cell "Disponible" [ref=e329]
+              - row [ref=e332]:
+                - cell "Ballentines" [ref=e333]
+                - cell "Tragos y Botellas" [ref=e335]
+                - cell "$900,00" [ref=e336]
+                - cell "Disponible" [ref=e337]
+          - link "Ver todos los productos" [ref=e340] [cursor=pointer]:
+            - /url: /admin/products
+  - region "Notifications Alt+T"
+  - button "Ir al POS a vender" [ref=e343]

@@ -1,0 +1,178 @@
+- generic [ref=f26e3]:
+  - navigation "Navegación principal" [ref=f26e4]:
+    - generic [ref=f26e7]:
+      - link "Ir al inicio" [ref=f26e8] [cursor=pointer]:
+        - /url: "#/"
+        - generic [ref=f26e10]: Menu QR
+      - generic [ref=f26e11]:
+        - link "Inicio" [ref=f26e12] [cursor=pointer]:
+          - /url: "#/"
+        - link "Funcionalidades" [ref=f26e13] [cursor=pointer]:
+          - /url: "#/funcionalidades"
+        - link "Contacto" [ref=f26e14] [cursor=pointer]:
+          - /url: "#/contacto"
+      - button "Solicitar App" [ref=f26e16]
+  - main [ref=f26e20]:
+    - generic [ref=f26e1087]:
+      - heading "Funcionalidades de Menu QR" [level=1] [ref=f26e1088]
+      - paragraph [ref=f26e1089]: Todo lo que la app de escritorio pone a tu alcance para administrar tu menú digital — sin internet, sin mensualidades.
+    - generic [ref=f26e1091]:
+      - generic [ref=f26e1092]:
+        - heading "Arrancas en 5 pasos" [level=2] [ref=f26e1093]
+        - paragraph [ref=f26e1094]: De la PC apagada a tu menú viviendo en los celulares de tus clientes — en menos tiempo del que piensas.
+      - list [ref=f26e1095]:
+        - listitem [ref=f26e1096]:
+          - generic [ref=f26e1097]: "1"
+          - heading "Configuras tu local" [level=3] [ref=f26e1104]
+          - paragraph [ref=f26e1105]: Cargas el nombre, el logo y el fondo de tu negocio.
+        - listitem [ref=f26e1106]:
+          - generic [ref=f26e1107]: "2"
+          - heading "Armas las categorías" [level=3] [ref=f26e1113]
+          - paragraph [ref=f26e1114]: "Categorías con iconos: tragos, picadas, dulces y lo que quieras."
+        - listitem [ref=f26e1115]:
+          - generic [ref=f26e1116]: "3"
+          - heading "Cargas los productos" [level=3] [ref=f26e1123]
+          - paragraph [ref=f26e1124]: Productos con precios, descripciones y estado de disponibilidad.
+        - listitem [ref=f26e1125]:
+          - generic [ref=f26e1126]: "4"
+          - heading "Generas el QR del menú" [level=3] [ref=f26e1134]
+          - paragraph [ref=f26e1135]: Lo descargas, lo imprimes y lo cuelgas en las mesas.
+        - listitem [ref=f26e1136]:
+          - generic [ref=f26e1137]: "5"
+          - heading "Escanea y pruebas" [level=3] [ref=f26e1145]
+          - paragraph [ref=f26e1146]: Abres la app, escaneas el QR y miras el menú en tu celular.
+    - generic [ref=f26e1148]:
+      - generic [ref=f26e1149]:
+        - heading "Así funciona en tu local" [level=2] [ref=f26e1150]
+        - paragraph [ref=f26e1151]: Todo vive dentro de tu red local. Sin internet, sin servidores externos, sin mensualidades. Tu PC manda, tus clientes escanean, tus vendedores cobran.
+      - 'img "Diagrama de infraestructura: la PC del local actúa como servidor, el router WiFi crea la red local, los clientes escanean el QR y ven el menú en su celular, los vendedores cobran desde el POS y la impresora térmica imprime los tickets — todo sin internet" [ref=f26e1154]':
+        - generic [ref=f26e1157]: 100% LOCAL
+        - generic [ref=f26e1158]: Sin internet
+        - generic [ref=f26e1159]:
+          - generic [ref=f26e1160]: "Conexiones de la impresora:"
+          - generic [ref=f26e1161]: USB / Bluetooth a la PC
+          - generic [ref=f26e1162]: Ethernet (TCP/IP) al router
+          - generic [ref=f26e1163]: Por la red local (WiFi)
+        - generic [ref=f26e1164]:
+          - generic [ref=f26e1167]: Menu QR
+          - generic [ref=f26e1168]: :3000
+          - generic [ref=f26e1172]: PC del Local
+          - generic [ref=f26e1173]: Servidor 0.0.0.0:3000
+        - generic [ref=f26e1174]:
+          - generic [ref=f26e1184]: Router WiFi
+          - generic [ref=f26e1185]: Red local
+        - generic [ref=f26e1186]:
+          - generic [ref=f26e1191]: Impresora Térmica
+          - generic [ref=f26e1192]: 58/80mm
+        - generic [ref=f26e1193]:
+          - generic [ref=f26e1204]: Cliente
+          - generic [ref=f26e1205]: Escanea QR
+        - generic [ref=f26e1206]:
+          - generic [ref=f26e1217]: Vendedor
+          - generic [ref=f26e1218]: POS
+        - generic [ref=f26e1219]: Ethernet
+        - generic [ref=f26e1222]: WiFi
+        - generic [ref=f26e1224]: TCP/IP
+        - generic [ref=f26e1226]: WiFi local
+        - generic [ref=f26e1229]: WiFi local
+        - generic [ref=f26e1232]: Ticket por red
+        - generic [ref=f26e1235]: Recibe ticket
+        - generic [ref=f26e1237]: USB / Bluetooth
+        - generic [ref=f26e1238]: Escanea el QR → ve el menú
+        - generic [ref=f26e1239]: Cobra POS → imprime ticket
+        - generic [ref=f26e1240]:
+          - generic [ref=f26e1245]: SIN INTERNET
+          - generic [ref=f26e1246]: 100% offline
+      - generic [ref=f26e1247]:
+        - generic [ref=f26e1248]:
+          - heading "Tu PC es el servidor" [level=3] [ref=f26e1252]
+          - paragraph [ref=f26e1253]: La app corre 24/7 en tu PC y sirve el menú en http://IP_LOCAL:3000. No necesitas hosting ni servidor externo.
+        - generic [ref=f26e1254]:
+          - heading "Router = tu red local" [level=3] [ref=f26e1260]
+          - paragraph [ref=f26e1261]: El router WiFi crea la red interna. La PC se conecta por WiFi o cable Ethernet — ambas opciones funcionan.
+        - generic [ref=f26e1262]:
+          - heading "Clientes escanean y listo" [level=3] [ref=f26e1266]
+          - paragraph [ref=f26e1267]: Escanean el QR en la mesa, abren el menú en el navegador y lo ven al instante. Sin apps, sin registros.
+        - generic [ref=f26e1268]:
+          - heading "Tickets al toque" [level=3] [ref=f26e1274]
+          - paragraph [ref=f26e1275]: "El vendedor cobra desde el POS en su celular y la impresora térmica imprime el ticket al instante. Doble copia: cliente y barra."
+    - generic [ref=f26e1278]:
+      - generic [ref=f26e1279]:
+        - 'button "4 vistas Puesta en marcha Dejas tu local listo en minutos: identidad, carta completa y el QR para las mesas. Ver" [pressed] [ref=f26e1280] [cursor=pointer]':
+          - generic [ref=f26e1281]: 4 vistas
+          - heading "Puesta en marcha" [level=3] [ref=f26e1287]
+          - paragraph [ref=f26e1288]: "Dejas tu local listo en minutos: identidad, carta completa y el QR para las mesas."
+          - generic [ref=f26e1289]: Ver
+        - 'button "4 vistas Cliente Todo lo que ve y usa quien escanea el QR: menú, promos y conexión al WiFi. Ver" [ref=f26e1292] [cursor=pointer]':
+          - generic [ref=f26e1293]: 4 vistas
+          - heading "Cliente" [level=3] [ref=f26e1298]
+          - paragraph [ref=f26e1299]: "Todo lo que ve y usa quien escanea el QR: menú, promos y conexión al WiFi."
+          - generic [ref=f26e1300]: Ver
+        - 'button "3 vistas Operación diaria El día a día en el local: vendedores cobrando con el POS y emitiendo tickets. Ver" [ref=f26e1303] [cursor=pointer]':
+          - generic [ref=f26e1304]: 3 vistas
+          - heading "Operación diaria" [level=3] [ref=f26e1310]
+          - paragraph [ref=f26e1311]: "El día a día en el local: vendedores cobrando con el POS y emitiendo tickets."
+          - generic [ref=f26e1312]: Ver
+        - 'button "5 vistas Administración Vista completa del negocio: acceso, métricas, vendedores, ventas y respaldo. Ver" [ref=f26e1315] [cursor=pointer]':
+          - generic [ref=f26e1316]: 5 vistas
+          - heading "Administración" [level=3] [ref=f26e1322]
+          - paragraph [ref=f26e1323]: "Vista completa del negocio: acceso, métricas, vendedores, ventas y respaldo."
+          - generic [ref=f26e1324]: Ver
+      - generic [ref=f26e1328]:
+        - button "Configuración + Promos" [pressed] [ref=f26e1329] [cursor=pointer]
+        - button "Categorías" [ref=f26e1330] [cursor=pointer]
+        - button "Productos" [ref=f26e1331] [cursor=pointer]
+        - button "Vista previa del Menú" [ref=f26e1332] [cursor=pointer]
+      - generic [ref=f26e1333]:
+        - generic [ref=f26e1334]:
+          - img "Configuración + Promos — vista desktop" [ref=f26e1337]
+          - img "Configuración + Promos — vista mobile" [ref=f26e1349]
+        - generic [ref=f26e1361]:
+          - generic [ref=f26e1362]:
+            - heading "Configuración + Promos" [level=3] [ref=f26e1363]
+            - generic [ref=f26e1364]:
+              - generic [ref=f26e1365]: admin
+              - generic [ref=f26e1366]: configuración
+          - paragraph [ref=f26e1367]: Configuración del local (nombre, logo, fondo) y gestión de promociones activas.
+          - generic [ref=f26e1368]:
+            - generic [ref=f26e1369]:
+              - heading "Qué te permite hacer" [level=4] [ref=f26e1370]
+              - list [ref=f26e1371]:
+                - listitem [ref=f26e1372]:
+                  - generic [ref=f26e1376]: Configurar el nombre del local que se muestra en el menú
+                - listitem [ref=f26e1377]:
+                  - generic [ref=f26e1381]: Subir tu logo y elegir la imagen de fondo
+                - listitem [ref=f26e1382]:
+                  - generic [ref=f26e1386]: Crear y gestionar promociones activas del menú
+            - generic [ref=f26e1387]:
+              - heading "Cómo se usa" [level=4] [ref=f26e1388]
+              - list [ref=f26e1389]:
+                - listitem [ref=f26e1390]:
+                  - generic [ref=f26e1391]: "1"
+                  - generic [ref=f26e1392]: Andas a Configuración desde el panel admin.
+                - listitem [ref=f26e1393]:
+                  - generic [ref=f26e1394]: "2"
+                  - generic [ref=f26e1395]: Cargas el nombre, el logo y el fondo de tu local.
+                - listitem [ref=f26e1396]:
+                  - generic [ref=f26e1397]: "3"
+                  - generic [ref=f26e1398]: Creas una promoción y la activas para que aparezca en el menú público.
+            - generic [ref=f26e1399]:
+              - heading "Cuándo te sirve" [level=4] [ref=f26e1400]
+              - paragraph [ref=f26e1401]: El día que reinauguras con un logo nuevo o quieres lanzar un “2x1 en tragos”, lo cambias acá y el menú que ven tus clientes se actualiza al instante — sin reimprimir nada.
+    - generic [ref=f26e1403]:
+      - paragraph [ref=f26e1404]: ¿Quieres ver la app en acción? Contactas al desarrollador para una demo.
+      - button "Solicitar App" [ref=f26e1405]
+  - contentinfo [ref=f26e289]:
+    - generic [ref=f26e291]:
+      - generic [ref=f26e292]:
+        - img "Menu QR" [ref=f26e294]
+        - generic [ref=f26e295]:
+          - paragraph [ref=f26e296]: Menu QR
+          - paragraph [ref=f26e297]: © 2026 — Simple por diseño
+      - navigation "Navegación del pie" [ref=f26e298]:
+        - link "Inicio" [ref=f26e299] [cursor=pointer]:
+          - /url: "#/"
+        - link "Funcionalidades" [ref=f26e300] [cursor=pointer]:
+          - /url: "#/funcionalidades"
+        - link "Contacto" [ref=f26e301] [cursor=pointer]:
+          - /url: "#/contacto"

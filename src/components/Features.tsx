@@ -18,19 +18,19 @@ const FEATURES: Feature[] = [
     icon: 'CreditCard',
     title: 'Pago único, cero suscripciones',
     description:
-      'Comprás una vez y la app es tuya para siempre. Sin cuotas mensuales, sin costos de hosting, sin sorpresas.',
+      'Pagas una vez y la app es tuya para siempre. Sin cuotas mensuales, sin costos de hosting, sin sorpresas.',
   },
   {
     icon: 'Shield',
     title: 'Tus datos, tu PC',
     description:
-      'Toda la información de tu menú, configuraciones e imágenes se guardan localmente. Sin depender de servidores externos.',
+      'Toda la información de tu menú, configuraciones e imágenes se guardan localmente. Nada de servidores externos.',
   },
   {
     icon: 'Settings',
     title: 'Configuración simple',
     description:
-      'Descargás, abrís y ya está. Categorías, productos, fotos y precios se administran desde un panel visual e intuitivo.',
+      'Descargas, abres y ya está. Categorías, productos, fotos y precios se administran desde un panel visual e intuitivo.',
   },
   {
     icon: 'Smartphone',
@@ -54,7 +54,7 @@ export function Features() {
             ¿Por qué <span className="text-primary">Menu QR</span>?
           </h2>
           <p className="mt-4 text-text-secondary text-lg max-w-xl mx-auto">
-            Pensado para restaurantes que necesitan algo que simplemente funcione
+            Pensado para restaurantes que necesitan algo que simplemente funcione.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export function Features() {
                 className="group p-6 rounded-2xl border border-border bg-bg-surface hover:border-primary/30 hover:bg-[#222] transition-all duration-300"
               >
                 <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  {Icon && <Icon className="w-5 h-5 text-primary" />}
+                  {Icon && <Icon className="w-5 h-5 text-primary-text" />}
                 </div>
                 <h3 className="text-lg font-semibold text-text-primary mb-2">
                   {feature.title}
