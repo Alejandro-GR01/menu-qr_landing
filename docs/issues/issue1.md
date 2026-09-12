@@ -101,3 +101,25 @@ Batch 3 — PARALELO, archivos disjuntos, después de Batch 2
 ## Bloqueado por
 
 **None - puede arrancar de inmediato.**
+
+---
+
+## ✅ Estado actual (actualizado 2026-09-11)
+
+> **COMPLETO salvo restaurar DB real.** Ver también `docs/agents/capturas.md` y `docs/agents/datos-demo.md`.
+
+### Hecho
+- **36 PNG en `public/views/`** (18 vistas × desktop 1280×800 + mobile 375×812) con datos demo (ver `docs/agents/datos-demo.md`).
+- **Bug fixeado (numeración de tickets):** metas `last_ticket_date`/`last_ticket_number` desincronizadas causaban UNIQUE violation — ver `docs/agents/errores-conocidos.md`.
+- **Recapturas correctas:** `admin-dashboard` (build nuevo sin gráficas eliminadas), `admin-qr-wifi` (tab WiFi activo), `menu-promotion` (burbuja visible tras ~6s).
+- **Vistas nuevas v2.1.0:** `admin-shifts` (Turnos) y `seller-cuentas` (POS Cuentas — localStorage, no DB).
+- `public/views/views.md` actualizado a v2.1.0 (18 vistas, rutas reales `/seller`, `/seller/cuentas`, `/seller/tickets`, `/admin/shifts`).
+- `src/data/views.ts` actualizado (agregadas `admin-shifts` + `seller-cuentas`). `pnpm lint` + `pnpm build` OK.
+
+### Pendiente
+1. **Restaurar la DB del cliente** desde `menu.db.cliente.bak` — requiere autorización del usuario (contradice "no tocar la app Electron").
+2. Borrar `capture-views.tmp.mjs` (script temporal en la app).
+
+### Nuevo (2026-09-11, después del estado anterior)
+- **36/36 AVIF convertidos** por el usuario con ezgif.com — se eliminaron los viejos (5-sep) y se renombraron quitando el sufijo `-ezgif.com-apng-to-avif-converter`. Quedan 36 `.avif` con nombres limpios.
+- **Fallback AVIF→PNG arreglado:** `views.ts` pasaba `.avif` directo a los mockups (fallback muerto). Ahora `png(id, device)` genera rutas `.png` como base; `DeviceMockup` intenta AVIF y cae a PNG via `onerror`. Ver `docs/agents/optimizacion-imagenes.md`.

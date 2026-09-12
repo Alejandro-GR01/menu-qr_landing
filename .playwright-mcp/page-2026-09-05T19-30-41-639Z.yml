@@ -1,7 +1,0 @@
-- generic [ref=f63e5]:
-  - heading "404" [level=1] [ref=f63e13]
-  - paragraph [ref=f63e14]: Esta página no existe
-  - paragraph [ref=f63e15]: La ruta que buscas no se encuentra en esta red local. Puede que la página haya sido movida o que no exista.
-  - generic [ref=f63e16]: 404 — Not Found
-  - link "Volver al inicio" [ref=f63e18] [cursor=pointer]:
-    - /url: /menu-qr_landing/

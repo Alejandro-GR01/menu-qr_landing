@@ -25,7 +25,7 @@ La landing es **multi-página** con React Router (BrowserRouter + fallback `404.
 | Ruta | Página | Contenido |
 |------|--------|-----------|
 | `/` | Home | Hero con mockups superpuestos, features, comparación papel/nube/local, dashboard admin, infraestructura, tech stack |
-| `/funcionalidades` | Feature showcase | Galería de las **16 vistas reales de la app** en mockups SVG (LaptopFrame + MobileFrame) con tabs y filtros |
+| `/funcionalidades` | Feature showcase | Galería de las **18 vistas reales de la app** en mockups SVG (LaptopFrame + MobileFrame) con tabs y filtros |
 | `/contacto` | Contacto | Formulario + contacto directo por email (el `.exe` de Windows se entrega tras el contacto) |
 | `*` | 404 | Página aislada full-viewport con CTA único |
 
@@ -40,7 +40,7 @@ La landing es **multi-página** con React Router (BrowserRouter + fallback `404.
 | Tipografía | Geist Variable |
 | Routing | React Router (BrowserRouter + basename) |
 | Imágenes | AVIF con fallback nativo a PNG (SVG `<image>` `xMinYMin slice`) |
-| Deploy | `pnpm deploy` → branch `gh-pages` (peaceiris/gh-pages) |
+| Deploy | `pnpm deploy` → branch `gh-pages` (paquete npm `gh-pages`) |
 
 ## Desarrollo
 
@@ -63,12 +63,13 @@ No hay workflow automático: el deploy corre localmente y publica la branch `gh-
 
 ## Vistas reales de la app
 
-Las **16 vistas** de Menu QR (desktop + mobile) están en `public/views/` como pares **PNG + AVIF**, capturadas con Playwright desde la app en desarrollo:
+Las **18 vistas** de Menu QR (desktop + mobile) están en `public/views/` como pares **PNG + AVIF**, capturadas con Playwright desde la app en desarrollo:
 
 | Vista | Desktop | Mobile |
 |-------|---------|--------|
 | Login | `login-desktop` | `login-mobile` |
 | Dashboard | `admin-dashboard-desktop` | `admin-dashboard-mobile` |
+| Turnos | `admin-shifts-desktop` | `admin-shifts-mobile` |
 | Configuración + Promos | `admin-config-desktop` | `admin-config-mobile` |
 | Categorías | `admin-categories-desktop` | `admin-categories-mobile` |
 | Productos + Drag & Drop | `admin-products-desktop` | `admin-products-mobile` |
@@ -82,6 +83,7 @@ Las **16 vistas** de Menu QR (desktop + mobile) están en `public/views/` como p
 | Menú público | `menu-public-desktop` | `menu-public-mobile` |
 | Promoción flotante | `menu-promotion-desktop` | `menu-promotion-mobile` |
 | POS seller | `seller-pos-desktop` | `seller-pos-mobile` |
+| Cuentas del POS | `seller-cuentas-desktop` | `seller-cuentas-mobile` |
 | Tickets seller | `seller-tickets-desktop` | `seller-tickets-mobile` |
 
 Para regenerarlas: ver `docs/issues/issue1.md` (flujo Playwright + conversión AVIF con `scripts/convert-avif.mjs`).
