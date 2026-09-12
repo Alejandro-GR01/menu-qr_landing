@@ -40,18 +40,14 @@ export interface FAQItem {
 export interface ViewEntry {
   id: string;
   title: string;
+  /** Frase corta: lo que el dueño logra con esta vista (≤15 palabras) */
   description: string;
   desktopSrc: string;
   mobileSrc: string;
-  tags: string[];
-  /** Área funcional a la que pertenece (id de FunctionalArea) */
+  /** Persona a la que pertenece: dueno | puesta-en-marcha | cliente | vendedor */
   area?: string;
-  /** Qué te permite hacer esta vista — lista de capacidades reales */
-  capabilities?: string[];
-  /** Cómo se usa — pasos numerados concretos */
-  steps?: string[];
-  /** Caso práctico real de cuándo te sirve */
-  useCase?: string;
+  /** Máx 3 bullets cortos (6-8 palabras) — qué logras con esta vista */
+  highlights?: string[];
 }
 
 export interface FunctionalArea {

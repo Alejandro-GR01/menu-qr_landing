@@ -1,4 +1,4 @@
-import { Wifi, Zap, CreditCard, Shield, Settings, Smartphone } from 'lucide-react'
+import { Wifi, Zap, CreditCard, Shield, Timer, Smartphone } from 'lucide-react'
 import type { Feature } from '@/types'
 
 const FEATURES: Feature[] = [
@@ -27,10 +27,10 @@ const FEATURES: Feature[] = [
       'Toda la información de tu menú, configuraciones e imágenes se guardan localmente. Nada de servidores externos.',
   },
   {
-    icon: 'Settings',
-    title: 'Configuración simple',
+    icon: 'Timer',
+    title: 'Turnos con resumen impreso',
     description:
-      'Descargas, abres y ya está. Categorías, productos, fotos y precios se administran desde un panel visual e intuitivo.',
+      'El administrador abre y cierra turnos cuando quiera — aunque duren dos días. Al cerrar, el asistente imprime el resumen: ventas, tickets y productos vendidos.',
   },
   {
     icon: 'Smartphone',
@@ -41,7 +41,7 @@ const FEATURES: Feature[] = [
 ]
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
-  Wifi, Zap, CreditCard, Shield, Settings, Smartphone,
+  Wifi, Zap, CreditCard, Shield, Timer, Smartphone,
 }
 
 export function Features() {

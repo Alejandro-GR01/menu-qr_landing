@@ -23,7 +23,7 @@ const CARDS = [
     icon: Printer,
     title: "Tickets al toque",
     description:
-      "El vendedor cobra desde el POS en su celular y la impresora térmica imprime el ticket al instante. Doble copia: cliente y barra.",
+      "El vendedor cobra desde el POS en su celular y la impresora térmica imprime el ticket al instante. Doble copia: cliente y barra. Funciona con cualquier impresora térmica: USB, Serial, TCP/IP o Bluetooth.",
   },
 ];
 

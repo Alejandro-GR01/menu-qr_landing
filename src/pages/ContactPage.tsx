@@ -33,7 +33,7 @@ const FAQ_ITEMS: FAQItem[] = [
     id: 'pricing',
     question: '¿Cuánto cuesta? ¿Hay mensualidad?',
     answer:
-      'Pago único. Sin suscripción, sin hosting, sin costos de servidor. Pagás una vez y la app es tuya para siempre.',
+      'Pago único. Sin suscripción, sin hosting, sin costos de servidor. Pagas una vez y la app es tuya para siempre.',
   },
   {
     id: 'offline',
@@ -58,6 +58,24 @@ const FAQ_ITEMS: FAQItem[] = [
     question: '¿Qué es el POS de vendedor?',
     answer:
       'Es un punto de venta integrado para que el vendedor cobre desde su celular o tablet en la red local. Sin hardware adicional, sin suscripciones.',
+  },
+  {
+    id: 'turnos',
+    question: '¿Cómo funciona el cierre de turno?',
+    answer:
+      'No hay horario fijo. El administrador abre el turno cuando empieza a vender y lo cierra cuando termina — aunque duren dos días. Al cerrar, el asistente imprime el resumen con las ventas, los tickets emitidos y los productos vendidos, sin sumar nada a mano.',
+  },
+  {
+    id: 'cuentas',
+    question: '¿Puedo tener varias mesas o cuentas abiertas a la vez?',
+    answer:
+      'Sí. Cada vendedor abre una cuenta por mesa, a modo de pestaña, y va agregando productos a medida que el cliente consume. Cuando el cliente termina, el vendedor cobra la cuenta completa desde su celular. Nada de papel ni cuentas que se pierden.',
+  },
+  {
+    id: 'impresora',
+    question: '¿Qué impresoras necesito?',
+    answer:
+      'Cualquier impresora térmica sirve. Se conecta por USB, Serial, TCP/IP o Bluetooth — se adapta a la impresora que ya tienes en el local, sin depender de modelos específicos.',
   },
 ]
 

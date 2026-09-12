@@ -1,7 +1,7 @@
-import { useMemo, useState } from 'react';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
-import { LaptopFrame } from '@/components/DeviceMockup';
-import { MobileFrame } from '@/components/DeviceMockup';
+import { useEffect, useMemo, useState } from 'react';
+import { CheckCircle2, ChevronLeft, ChevronRight, Monitor } from 'lucide-react';
+import { LaptopFrame, MobileFrame } from '@/components/DeviceMockup';
+import { ContactButton } from '@/components/ContactButton';
 import { AREAS } from '@/data/views';
 import type { ViewEntry } from '@/types';
 
@@ -9,211 +9,238 @@ interface ViewsShowcaseProps {
   views: ViewEntry[];
 }
 
-export function ViewsShowcase({ views }: ViewsShowcaseProps) {
-  const [activeAreaId, setActiveAreaId] = useState(AREAS[0]?.id ?? 'setup');
-  const [activeViewId, setActiveViewId] = useState(views[0]?.id ?? '');
+function toPng(src: string): string {
+  return src.replace(/\.avif$/i, '.png');
+}
 
-  const activeArea = useMemo(
-    () => AREAS.find((a) => a.id === activeAreaId) ?? AREAS[0],
-    [activeAreaId],
+/** Comprueba que existan las imágenes PNG de la vista (los mockups hacen su propio AVIF→PNG). */
+function useViewImagesPresent(desktopSrc: string, mobileSrc: string): boolean {
+  const desktopPng = toPng(desktopSrc);
+  const mobilePng = toPng(mobileSrc);
+
+  const [present, setPresent] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const check = async () => {
+      const results = await Promise.all(
+        [desktopPng, mobilePng].map(
+          (url) =>
+            new Promise<boolean>((resolve) => {
+              const img = new Image();
+              img.onload = () => resolve(true);
+              img.onerror = () => resolve(false);
+              if (url) img.src = url;
+              else resolve(false);
+            }),
+        ),
+      );
+      if (!cancelled) setPresent(results.every(Boolean));
+    };
+
+    void check();
+    return () => {
+      cancelled = true;
+    };
+  }, [desktopPng, mobilePng]);
+
+  return present;
+}
+
+/**
+ * Placeholder elegante para cuando las imágenes de una vista todavía
+ * no existen (ej. capturas de un próximo lanzamiento).
+ */
+function MockupPlaceholder({ alt }: { alt: string }) {
+  return (
+    <div
+      role="img"
+      aria-label={`${alt} — imagen en preparación`}
+      className="w-full aspect-[4/3] rounded-2xl border border-dashed border-border bg-bg-surface flex flex-col items-center justify-center gap-3 text-text-secondary"
+    >
+      <Monitor className="w-10 h-10" aria-hidden="true" />
+      <span className="text-sm px-6 text-center">Imagen en preparación</span>
+    </div>
+  );
+}
+
+export function ViewsShowcase({ views }: ViewsShowcaseProps) {
+  const [activePersonaId, setActivePersonaId] = useState(AREAS[0]?.id ?? 'dueno');
+  const [activeViewId, setActiveViewId] = useState('');
+
+  const activePersona = useMemo(
+    () => AREAS.find((a) => a.id === activePersonaId) ?? AREAS[0],
+    [activePersonaId],
   );
 
-  const areaViews = useMemo(() => {
-    if (!activeArea) return [];
-    return views.filter((v) => v.area === activeArea.id);
-  }, [views, activeArea]);
+  const personaViews = useMemo(
+    () => views.filter((v) => v && v.area === activePersona?.id),
+    [views, activePersona],
+  );
 
   const activeView = useMemo(
-    () =>
-      areaViews.find((v) => v.id === activeViewId) ?? areaViews[0],
-    [areaViews, activeViewId],
+    () => personaViews.find((v) => v.id === activeViewId) ?? personaViews[0],
+    [personaViews, activeViewId],
   );
 
-  function selectArea(areaId: string) {
-    setActiveAreaId(areaId);
-    const first = views.find((v) => v.area === areaId);
-    if (first) setActiveViewId(first.id);
+  const activeIndex = useMemo(
+    () => personaViews.findIndex((v) => v.id === activeView?.id),
+    [personaViews, activeView],
+  );
+
+  const imagesPresent = useViewImagesPresent(
+    activeView?.desktopSrc ?? '',
+    activeView?.mobileSrc ?? '',
+  );
+
+  function selectPersona(areaId: string) {
+    setActivePersonaId(areaId);
+    setActiveViewId('');
+  }
+
+  function goToView(index: number) {
+    const next = personaViews[index];
+    if (next) setActiveViewId(next.id);
   }
 
   return (
     <div className="w-full">
-      {/* ═══ Capa 1 — Tarjetas de Áreas funcionales ═══ */}
-      <div className="grid sm:grid-cols-2 gap-4 mb-8">
+      {/* ═══ Chips de personas ═══ */}
+      <div className="flex flex-wrap justify-center gap-2.5 mb-8">
         {AREAS.map((area) => {
-          const viewCount = views.filter((v) => v.area === area.id).length;
-          const isActive = area.id === activeArea?.id;
           const Icon = area.icon;
+          const isActive = area.id === activePersona?.id;
           return (
             <button
               key={area.id}
-              onClick={() => selectArea(area.id)}
+              type="button"
+              onClick={() => selectPersona(area.id)}
               aria-pressed={isActive}
-              className={`group text-left p-5 rounded-2xl border transition-all duration-200 cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full border text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 isActive
-                  ? 'border-primary/50 bg-bg-surface'
-                  : 'border-border bg-bg-surface hover:border-primary/30'
+                  ? 'bg-primary/15 text-primary-text border-primary/40'
+                  : 'bg-bg-surface text-text-secondary border-border hover:text-text-primary hover:border-primary/20'
               }`}
             >
-              <div className="flex items-start justify-between gap-3">
-                <div
-                  className={`p-2.5 rounded-xl transition-colors ${
-                    isActive ? 'bg-primary/15 text-primary-text' : 'bg-primary/10 text-primary-text'
-                  }`}
-                >
-                  <Icon className="w-6 h-6" />
-                </div>
-                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary-text border border-primary/20">
-                  {viewCount} {viewCount === 1 ? 'vista' : 'vistas'}
-                </span>
-              </div>
-
-              <h3 className="mt-4 text-lg font-semibold text-text-primary">
-                {area.title}
-              </h3>
-              <p className="mt-1 text-sm text-text-secondary leading-relaxed">
-                {area.description}
-              </p>
-
               <span
-                className={`mt-4 inline-flex items-center gap-1 text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'text-primary-text'
-                    : 'text-text-secondary group-hover:text-primary-text'
+                className={`flex items-center justify-center w-5 h-5 rounded-full text-xs ${
+                  isActive ? 'bg-primary/20' : 'bg-primary/10'
                 }`}
               >
-                Ver
-                <ArrowRight
-                  className={`w-4 h-4 transition-transform ${
-                    isActive ? '' : 'group-hover:translate-x-1'
-                  }`}
-                />
+                <Icon className="w-3.5 h-3.5" aria-hidden="true" />
               </span>
+              {area.title}
             </button>
           );
         })}
       </div>
 
-      {/* ═══ Tabs horizontales de la vista activa por área ═══ */}
-      {areaViews.length > 0 && (
-        <div className="relative mb-8 -mx-4 px-4 overflow-x-auto scrollbar-none">
-          <div className="flex gap-2 min-w-max pb-2">
-            {areaViews.map((view) => {
-              const isActive = view.id === activeView?.id;
-              return (
-                <button
-                  key={view.id}
-                  onClick={() => setActiveViewId(view.id)}
-                  aria-pressed={isActive}
-                  className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-all duration-200 cursor-pointer ${
-                    isActive
-                      ? 'bg-primary/15 text-primary-text border border-primary/30'
-                      : 'bg-bg-surface border border-border text-text-secondary hover:text-text-primary hover:border-primary/20'
-                  }`}
-                >
-                  {view.title}
-                </button>
-              );
-            })}
-          </div>
-          {/* Right fade — visual affordance signaling more content to scroll */}
-          <div className="pointer-events-none absolute right-0 top-0 bottom-2 w-10 bg-gradient-to-l from-bg-primary to-transparent" />
-        </div>
-      )}
-
-      {/* ═══ Mockups + Ficha de conocimiento ═══ */}
+      {/* ═══ Vista activa ═══ */}
       {activeView && (
-        <div className="animate-fade-in" key={`${activeArea?.id}-${activeView.id}`}>
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-center">
-            <div className="md:col-span-2">
-              <LaptopFrame
-                src={activeView.desktopSrc}
-                alt={`${activeView.title} — vista desktop`}
-              />
-            </div>
-            <div className="md:col-span-1 max-w-[180px] md:max-w-[220px] mx-auto">
-              <MobileFrame
-                src={activeView.mobileSrc}
-                alt={`${activeView.title} — vista mobile`}
-              />
-            </div>
+        <div
+          key={`${activePersona?.id}-${activeView.id}`}
+          className="animate-fade-in"
+        >
+          <div className="relative">
+            {imagesPresent ? (
+              <>
+                <LaptopFrame
+                  src={activeView.desktopSrc}
+                  alt={`${activeView.title} en PC`}
+                />
+                <div className="absolute -right-2 -bottom-4 w-[42%] sm:w-[40%] sm:-right-3 sm:-bottom-5 md:w-[30%] md:-right-4 md:-bottom-8 lg:w-[26%] lg:-right-8 lg:-bottom-10 z-10">
+                  <MobileFrame
+                    src={activeView.mobileSrc}
+                    alt={`${activeView.title} en celular`}
+                  />
+                </div>
+              </>
+            ) : (
+              <MockupPlaceholder alt={activeView.title} />
+            )}
           </div>
 
-          {/* ═══ Capa 2 — Ficha de conocimiento ═══ */}
-          <div className="mt-8 rounded-2xl bg-bg-surface border border-border p-6 sm:p-8">
-            <div className="flex flex-wrap items-center gap-2 mb-3">
-              <h3 className="text-xl font-semibold text-text-primary">
-                {activeView.title}
-              </h3>
-              <div className="flex flex-wrap justify-center gap-2">
-                {activeView.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary-text border border-primary/20"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* 1 — Qué es */}
-            <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
+          {/* ═══ Mini ficha ═══ */}
+          <div className="mt-12 md:mt-10 max-w-3xl mx-auto text-center">
+            <p className="text-xs font-semibold tracking-widest uppercase text-primary/80">
+              {activePersona?.title}
+            </p>
+            <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-text-primary">
+              {activeView.title}
+            </h3>
+            <p className="mt-3 text-text-secondary leading-relaxed">
               {activeView.description}
             </p>
 
-            {/* Grid de bloques */}
-            <div className="mt-6 grid gap-6 lg:grid-cols-3">
-              {/* 2 — Qué te permite hacer */}
-              <div>
-                <h4 className="text-sm font-semibold text-primary-text mb-3">
-                  Qué te permite hacer
-                </h4>
-                <ul className="space-y-2.5">
-                  {activeView.capabilities?.map((cap, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-sm text-text-secondary leading-snug"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-primary-text shrink-0 mt-0.5" />
-                      <span>{cap}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <ul className="mt-5 flex flex-col items-center gap-2">
+              {activeView.highlights?.map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-center gap-2 text-sm text-text-secondary text-left"
+                >
+                  <CheckCircle2
+                    className="w-4 h-4 text-primary shrink-0"
+                    aria-hidden="true"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
 
-              {/* 3 — Cómo se usa */}
-              <div>
-                <h4 className="text-sm font-semibold text-primary-text mb-3">
-                  Cómo se usa
-                </h4>
-                <ol className="space-y-2.5">
-                  {activeView.steps?.map((step, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-sm text-text-secondary leading-snug"
-                    >
-                      <span className="w-5 h-5 shrink-0 rounded-full bg-primary/15 text-primary-text text-xs font-semibold flex items-center justify-center mt-0.5">
-                        {i + 1}
-                      </span>
-                      <span>{step}</span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-
-              {/* 4 — Cuándo te sirve */}
-              {activeView.useCase && (
-                <div>
-                  <h4 className="text-sm font-semibold text-primary-text mb-3">
-                    Cuándo te sirve
-                  </h4>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {activeView.useCase}
-                  </p>
-                </div>
-              )}
+            <div className="mt-7 flex items-center justify-center">
+              <ContactButton />
             </div>
           </div>
+
+          {/* ═══ Navegación < • • • > ═══ */}
+          {personaViews.length > 1 && (
+            <div className="mt-8 flex items-center justify-center gap-4">
+              <button
+                type="button"
+                onClick={() =>
+                  goToView(
+                    (activeIndex - 1 + personaViews.length) % personaViews.length,
+                  )
+                }
+                aria-label="Vista anterior"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-bg-surface text-text-secondary hover:text-text-primary hover:border-primary/30 transition-all duration-200 cursor-pointer"
+              >
+                <ChevronLeft className="w-5 h-5" aria-hidden="true" />
+              </button>
+
+              <div className="flex items-center gap-2" role="tablist" aria-label="Vistas">
+                {personaViews.map((view, i) => {
+                  const isActive = view.id === activeView.id;
+                  return (
+                    <button
+                      key={view.id}
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
+                      aria-label={`Ver ${view.title}`}
+                      title={view.title}
+                      onClick={() => goToView(i)}
+                      className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${
+                        isActive ? 'w-6 bg-primary' : 'w-2 bg-border hover:bg-text-secondary'
+                      }`}
+                    />
+                  );
+                })}
+              </div>
+
+              <button
+                type="button"
+                onClick={() =>
+                  goToView((activeIndex + 1) % personaViews.length)
+                }
+                aria-label="Vista siguiente"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-bg-surface text-text-secondary hover:text-text-primary hover:border-primary/30 transition-all duration-200 cursor-pointer"
+              >
+                <ChevronRight className="w-5 h-5" aria-hidden="true" />
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

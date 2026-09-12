@@ -38,7 +38,7 @@ export function FeaturesPage() {
       <section className="pb-24 px-4 text-center">
         <div className="max-w-2xl mx-auto">
           <p className="text-text-secondary text-sm sm:text-base mb-6">
-            ¿Quieres ver la app en acción? Contactas al desarrollador para una demo.
+            ¿Quieres ver la app en acción? Puedes contactar al desarrollador para una demo.
           </p>
           <ContactButton large />
         </div>

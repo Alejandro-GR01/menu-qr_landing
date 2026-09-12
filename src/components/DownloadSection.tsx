@@ -24,7 +24,7 @@ export function DownloadSection() {
           {/* Laptop — admin desktop */}
           <div className="row-span-2 md:row-span-1 md:col-span-2 w-full mx-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <LaptopFrame
-              src={`${baseUrl}views/admin-dashboard-desktop.avif`}
+              src={`${baseUrl}views/admin-dashboard-desktop.png`}
               alt="Dashboard del panel de administración en PC"
             />
             <div className="flex items-center gap-2 justify-center mt-3">
@@ -50,7 +50,7 @@ export function DownloadSection() {
           {/* Mobile — admin mobile */}
           <div className=" mx-auto row-span-2 md:row-span-1 md:col-span-2 w-full max-w-[90px] sm:max-w-[120px] md:max-w-[150px] ">
             <MobileFrame
-              src={`${baseUrl}views/admin-dashboard-mobile.avif`}
+              src={`${baseUrl}views/admin-dashboard-mobile.png`}
               alt="Dashboard del panel de administración en celular"
             />
             <div className="flex items-center gap-2 justify-center mt-3">

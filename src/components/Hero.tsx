@@ -67,7 +67,7 @@ export function Hero() {
           {/* Laptop — menú público desktop */}
           <div className="row-span-2 md:row-span-1 md:col-span-2 w-full mx-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <LaptopFrame
-              src={`${baseUrl}screenshot-menu-desktop.png`}
+              src={`${baseUrl}views/menu-public-desktop.png`}
               alt="Menú digital en PC"
             />
             <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">
@@ -90,7 +90,7 @@ export function Hero() {
           {/* Mobile — menú público mobile — eager: above the fold */}
           <div className="mx-auto row-span-2 md:row-span-1 md:col-span-2 w-full max-w-[90px] sm:max-w-[120px] md:max-w-[150px] ">
             <MobileFrame
-              src={`${baseUrl}screenshot-menu-mobile.png`}
+              src={`${baseUrl}views/menu-public-mobile.png`}
               alt="Menú digital en celular"
             />
             <p className="text-center text-text-secondary text-xs sm:text-sm mt-3">

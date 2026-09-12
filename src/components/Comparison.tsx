@@ -52,6 +52,20 @@ const COMPARISONS: ComparisonItem[] = [
     localWins: true,
   },
   {
+    aspect: 'Cierre de turno',
+    paper: 'Planilla a mano',
+    cloud: 'Sin resumen offline',
+    local: 'Resumen impreso automático',
+    localWins: true,
+  },
+  {
+    aspect: 'Mesas o cuentas abiertas',
+    paper: 'Anotaciones a mano',
+    cloud: 'Requiere plan de suscripción',
+    local: 'Cuentas abiertas por mesa en el POS',
+    localWins: true,
+  },
+  {
     aspect: 'Actualización remota',
     paper: 'Ir al local',
     cloud: 'Desde cualquier lado',

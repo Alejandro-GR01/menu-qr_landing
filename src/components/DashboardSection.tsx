@@ -6,8 +6,8 @@ import { ContactButton } from '@/components/ContactButton'
 const KPIS = [
   {
     icon: TrendingUp,
-    name: 'Ventas del día',
-    description: 'el monto total de hoy con su ticket promedio, ya calculado.',
+    name: 'Ventas del turno',
+    description: 'el monto total del turno activo, comparado con el turno anterior.',
   },
   {
     icon: Receipt,
@@ -40,9 +40,10 @@ export function DashboardSection() {
             </h2>
             <p className="mt-4 text-text-secondary text-lg leading-relaxed">
               Cada ticket que cierra un vendedor en el POS se refleja al instante
-              en el dashboard. Al terminar el día ves las ventas totales, los
-              tickets cerrados y el producto más vendido — sin abrir una planilla
-              ni sumar a mano.
+              en el dashboard del turno activo. El panel muestra las ventas, los
+              tickets cerrados y el producto más vendido del turno en curso, y lo
+              compara con el turno anterior — sin abrir una planilla ni sumar a
+              mano.
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -78,7 +79,7 @@ export function DashboardSection() {
 
           <div>
             <LaptopFrame
-              src={`${import.meta.env.BASE_URL}views/admin-dashboard-desktop.avif`}
+              src={`${import.meta.env.BASE_URL}views/admin-dashboard-desktop.png`}
               alt="Dashboard del panel de administración — vista desktop"
             />
           </div>
