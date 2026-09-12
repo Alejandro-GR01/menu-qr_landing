@@ -1,7 +1,7 @@
-# Menu QR App — Vistas (v2.0.4)
+# Menu QR App — Vistas (v2.1.0)
 
-> Capturas de pantalla de la app **Menu QR v2.0.4** en desktop (1280×800) y mobile (375×812).
-> **Fecha de captura:** 2026-09-05
+> Capturas de pantalla de la app **Menu QR v2.1.0** en desktop (1280×800) y mobile (375×812).
+> **Última actualización de capturas:** 2026-09-11
 >
 > ⚠️ **Los datos mostrados son DEMO ficticios** — no corresponden a datos reales de ningún cliente. Local demo: `La Esquina de los Sabores`.
 
@@ -9,7 +9,7 @@
 
 ## 1. Login
 
-Pantalla de inicio de sesión (unificada para admin y seller). Acceso con credenciales por defecto: `admin` / `admin123`.
+Pantalla de inicio de sesión (unificada para admin y seller). Acceso con credenciales por defecto: `admin` / `admin123` (admin) y `seller1` / `demo1234` (vendedor).
 
 | Archivos | Tags |
 |----------|------|
@@ -33,7 +33,20 @@ Ruta: `/admin` (dashboard)
 
 ---
 
-## 3. Admin — Configuración + Promociones
+## 3. Admin — Turnos
+
+Apertura y cierre de turnos de venta, con detalle de cada cierre: total, tickets y vendedor.
+
+| Archivos | Tags |
+|----------|------|
+| `admin-shifts-desktop.png`, `admin-shifts-desktop.avif` | admin, turnos, ventas |
+| `admin-shifts-mobile.png`, `admin-shifts-mobile.avif` | admin, turnos, ventas |
+
+Ruta: `/admin/shifts`
+
+---
+
+## 4. Admin — Configuración + Promociones
 
 Configuración del local (nombre, logo, fondo) y gestión de promociones activas.
 
@@ -46,7 +59,7 @@ Ruta: `/admin/config`
 
 ---
 
-## 4. Admin — Categorías
+## 5. Admin — Categorías
 
 CRUD de categorías del menú con selector de iconos Lucide, nombre y orden personalizado.
 
@@ -59,7 +72,7 @@ Ruta: `/admin/categories`
 
 ---
 
-## 5. Admin — Productos
+## 6. Admin — Productos
 
 CRUD de productos con drag & drop para reordenar, disponibles/no disponibles y productos porcionables.
 
@@ -72,7 +85,7 @@ Ruta: `/admin/products`
 
 ---
 
-## 6. Admin — QR (Menú público)
+## 7. Admin — QR (Menú público)
 
 Generador del QR del menú público, con resolución configurable y descarga con nombre personalizado.
 
@@ -85,7 +98,7 @@ Ruta: `/admin/qr` (tab Menú)
 
 ---
 
-## 7. Admin — QR (WiFi)
+## 8. Admin — QR (WiFi)
 
 Generador del QR de la red WiFi para que los clientes se conecten automáticamente al escanear (SSID, contraseña, encriptación).
 
@@ -98,7 +111,7 @@ Ruta: `/admin/qr` (tab WiFi)
 
 ---
 
-## 8. Admin — Vista previa del Menú
+## 9. Admin — Vista previa del Menú
 
 Previsualización del menú público renderizado con el logo, colores, fondo y promoción configurados.
 
@@ -111,7 +124,7 @@ Ruta: `/admin/menu-preview`
 
 ---
 
-## 9. Admin — Vendedores
+## 10. Admin — Vendedores
 
 Gestión de vendedores para el modo POS: alta, edición, baja y credenciales de acceso.
 
@@ -124,7 +137,7 @@ Ruta: `/admin/sellers`
 
 ---
 
-## 10. Admin — Tickets
+## 11. Admin — Tickets
 
 Historial de tickets/ventas con montos, vendedor y estado para auditoría.
 
@@ -137,7 +150,7 @@ Ruta: `/admin/tickets`
 
 ---
 
-## 11. Admin — Impresora
+## 12. Admin — Impresora
 
 Configuración de la impresora térmica para tickets de venta.
 
@@ -150,7 +163,7 @@ Ruta: `/admin/printer`
 
 ---
 
-## 12. Admin — Backup / Restore
+## 13. Admin — Backup / Restore
 
 Exportación e importación de la base de datos (backup/restore) desde el panel.
 
@@ -163,7 +176,7 @@ Ruta: `/admin/db`
 
 ---
 
-## 13. Menú Público
+## 14. Menú Público
 
 Vista del menú que ven los clientes al escanear el QR: categorías, productos con nombre, descripción y precio.
 
@@ -176,7 +189,7 @@ Ruta: `/menu`
 
 ---
 
-## 14. Menú Público — Promoción
+## 15. Menú Público — Promoción
 
 Menú público con burbuja flotante de promoción activa.
 
@@ -189,7 +202,7 @@ Ruta: `/menu` (con promoción activa)
 
 ---
 
-## 15. POS — Punto de Venta (Vendedor)
+## 16. POS — Punto de Venta (Vendedor)
 
 Punto de venta para vendedores: carga de productos, cálculo de total y cierre de ticket.
 
@@ -198,11 +211,24 @@ Punto de venta para vendedores: carga de productos, cálculo de total y cierre d
 | `seller-pos-desktop.png`, `seller-pos-desktop.avif` | vendedor, POS |
 | `seller-pos-mobile.png`, `seller-pos-mobile.avif` | vendedor, POS |
 
-Ruta: `/pos` (vendedor)
+Ruta: `/seller` (vendedor)
 
 ---
 
-## 16. POS — Tickets (Vendedor)
+## 17. POS — Cuentas (Vendedor)
+
+Cuentas abiertas del vendedor: varias mesas en paralelo, cada una con sus productos y total.
+
+| Archivos | Tags |
+|----------|------|
+| `seller-cuentas-desktop.png`, `seller-cuentas-desktop.avif` | vendedor, cuentas, POS |
+| `seller-cuentas-mobile.png`, `seller-cuentas-mobile.avif` | vendedor, cuentas, POS |
+
+Ruta: `/seller/cuentas` (vendedor)
+
+---
+
+## 18. POS — Tickets (Vendedor)
 
 Tickets del vendedor: historial de sus propias ventas.
 
@@ -211,7 +237,7 @@ Tickets del vendedor: historial de sus propias ventas.
 | `seller-tickets-desktop.png`, `seller-tickets-desktop.avif` | vendedor, tickets |
 | `seller-tickets-mobile.png`, `seller-tickets-mobile.avif` | vendedor, tickets |
 
-Ruta: `/pos/tickets` (vendedor)
+Ruta: `/seller/tickets` (vendedor)
 
 ---
 
@@ -221,19 +247,23 @@ Ruta: `/pos/tickets` (vendedor)
 |---|-------|---------|--------|------|------|
 | 1 | Login | ✅ | ✅ | `/login` | admin, vendedor, auth |
 | 2 | Dashboard | ✅ | ✅ | `/admin` | admin, dashboard |
-| 3 | Configuración + Promos | ✅ | ✅ | `/admin/config` | admin, configuración |
-| 4 | Categorías | ✅ | ✅ | `/admin/categories` | admin, CRUD |
-| 5 | Productos | ✅ | ✅ | `/admin/products` | admin, CRUD |
-| 6 | QR Menú | ✅ | ✅ | `/admin/qr` | admin, QR |
-| 7 | QR WiFi | ✅ | ✅ | `/admin/qr` | admin, QR |
-| 8 | Vista previa Menú | ✅ | ✅ | `/admin/menu-preview` | admin, preview |
-| 9 | Vendedores | ✅ | ✅ | `/admin/sellers` | admin, vendedor, config |
-| 10 | Tickets | ✅ | ✅ | `/admin/tickets` | admin, tickets |
-| 11 | Impresora | ✅ | ✅ | `/admin/printer` | admin, configuración |
-| 12 | Backup / Restore | ✅ | ✅ | `/admin/db` | admin, configuración |
-| 13 | Menú Público | ✅ | ✅ | `/menu` | público, menú |
-| 14 | Menú Público + Promo | ✅ | ✅ | `/menu` | público, promo |
-| 15 | POS Vendedor | ✅ | ✅ | `/pos` | vendedor, POS |
-| 16 | POS Tickets | ✅ | ✅ | `/pos/tickets` | vendedor, tickets |
+| 3 | Turnos | ✅ | ✅ | `/admin/shifts` | admin, turnos, ventas |
+| 4 | Configuración + Promos | ✅ | ✅ | `/admin/config` | admin, configuración |
+| 5 | Categorías | ✅ | ✅ | `/admin/categories` | admin, CRUD |
+| 6 | Productos | ✅ | ✅ | `/admin/products` | admin, CRUD |
+| 7 | QR Menú | ✅ | ✅ | `/admin/qr` | admin, QR |
+| 8 | QR WiFi | ✅ | ✅ | `/admin/qr` | admin, QR |
+| 9 | Vista previa Menú | ✅ | ✅ | `/admin/menu-preview` | admin, preview |
+| 10 | Vendedores | ✅ | ✅ | `/admin/sellers` | admin, vendedor, config |
+| 11 | Tickets | ✅ | ✅ | `/admin/tickets` | admin, tickets |
+| 12 | Impresora | ✅ | ✅ | `/admin/printer` | admin, configuración |
+| 13 | Backup / Restore | ✅ | ✅ | `/admin/db` | admin, configuración |
+| 14 | Menú Público | ✅ | ✅ | `/menu` | público, menú |
+| 15 | Menú Público + Promo | ✅ | ✅ | `/menu` | público, promo |
+| 16 | POS Vendedor | ✅ | ✅ | `/seller` | vendedor, POS |
+| 17 | POS Cuentas | ✅ | ✅ | `/seller/cuentas` | vendedor, cuentas, POS |
+| 18 | POS Tickets | ✅ | ✅ | `/seller/tickets` | vendedor, tickets |
 
-**Total:** 32 capturas (16 vistas × desktop + mobile), cada una en PNG + AVIF.
+**Total:** 36 capturas (18 vistas × desktop + mobile), cada una en PNG + AVIF.
+
+> ✅ **AVIF completos (2026-09-11):** los 36 convertidos con ezgif.com y renombrados quitando el sufijo `-ezgif.com-apng-to-avif-converter` (los AVIF viejos del 5-sep se eliminaron). El landing sirve AVIF con fallback a PNG (`views.ts` apunta a PNG base).
