@@ -3,7 +3,7 @@ import type { FormEvent } from 'react'
 import { Send } from 'lucide-react'
 import { CONTACT_FORM_ID } from '@/components/ContactButton'
 
-const DEVELOPER_EMAIL = 'alejandrogr011231@gmail.com'
+const DEVELOPER_EMAIL = 'alejandrogr01dev@gmail.com'
 
 const CONSULTA_TYPES = [
   'Solicitar Menu QR',

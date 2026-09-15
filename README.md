@@ -92,4 +92,4 @@ Para regenerarlas: ver `docs/issues/issue1.md` (flujo Playwright + conversión A
 
 La app de escritorio promocionada vive en un repo privado. Para solicitar acceso:
 
-➡️ **Contacto:** [alejandrogr011231@gmail.com](mailto:alejandrogr011231@gmail.com?subject=Solicitud%20Menu%20QR)
+➡️ **Contacto:** [alejandrogr01dev@gmail.com](mailto:alejandrogr01dev@gmail.com?subject=Solicitud%20Menu%20QR)

@@ -34,7 +34,7 @@ Comportamiento: acordeón con apertura/cierre (una a la vez está bien), animaci
 
 ### `ContactPage` (completa)
 - **Hero/header de página:** "Solicitá tu Menu QR" + subtítulo.
-- **CTA principal de contacto:** `ContactButton` (mailto a `alejandrogr011231@gmail.com`) — reutilizar el componente existente.
+- **CTA principal de contacto:** `ContactButton` (mailto a `alejandrogr01dev@gmail.com`) — reutilizar el componente existente.
 - **Información de entrega:** texto aclarando que tras el contacto el desarrollador te envía el instalador para Windows (.exe).
 - **Pasos** (opcional, si queda bien): 1) Contactás → 2) Te llega el instalador → 3) Lo instalás y configurás el menú → 4) Listo para escanear.
 - **FAQ:** la sección `<FAQ />` abajo.
