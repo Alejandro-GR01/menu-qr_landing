@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import { MapPinOff } from 'lucide-react'
+import { AmbientGlow } from '@/components/AmbientGlow'
 
 export function NotFoundPage() {
   return (
-    <section className="min-h-dvh flex items-center justify-center px-4">
-      <div className="text-center max-w-xl mx-auto">
+    <section className="relative overflow-hidden min-h-dvh flex items-center justify-center px-4">
+      <AmbientGlow />
+      <div className="relative z-10 text-center max-w-xl mx-auto">
         <div className="animate-fade-in-up animate-delay-0">
           <MapPinOff className="w-12 h-12 text-text-secondary/40 mx-auto mb-6" aria-hidden="true" />
         </div>

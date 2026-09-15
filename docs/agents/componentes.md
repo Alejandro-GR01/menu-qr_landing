@@ -1,5 +1,22 @@
 # Componentes y sus estados
 
+## AmbientGlow
+Fondo ambiental reutilizable (extraído del Hero) — consistencia visual en el header de TODAS las rutas.
+
+| Prop | Valores | Default | Descripción |
+|------|---------|---------|-------------|
+| `align` | `'center' \| 'top'` | `'center'` | `center`: glow centrado (Home, 404). `top`: anclado arriba para headers compactos |
+
+Capas internas (3): glow primario `bg-primary/5` (1000px, `blur-[150px]`), glow dorado `bg-gold/5` (500px, `blur-[100px]`, offset -1/4, +1/4), grilla radial `#fafafa` al 3% (48px).
+
+**Contrato de uso — los 4 puntos obligatorios para no romper layout:**
+1. El section contenedor debe tener `relative` (ancla los absolutes)
+2. Y `overflow-hidden` (los glows de 1000px generan scroll horizontal si se fuga)
+3. El contenido va con `relative z-10` (stacking por encima del glow)
+4. El componente ya trae `pointer-events-none` + `aria-hidden="true"` — no duplicarlos
+
+Usado en: `Hero`, `FeaturesPage`, `ContactPage`, `NotFoundPage`.
+
 ## Navbar
 | Estado | Comportamiento |
 |--------|---------------|
@@ -12,6 +29,7 @@
 |--------|---------------|
 | Cargando | Animaciones fade-in secuenciales (app icon → headline → CTA → mockups) |
 | Default | LaptopFrame (menú desktop) + QR connector + MobileFrame (menú mobile) |
+| Fondo | `<AmbientGlow />` (primer hijo del section, `relative overflow-hidden` en el contenedor) |
 | Sin imagen | Fallback: SVG sin screenshot (no debería pasar, está en public/) |
 
 ## ContactButton
@@ -77,7 +95,9 @@ Ambos SVGs usan `clipPath` para recortar el screenshot dentro del área de panta
 
 | Página | Ruta | Contenido |
 |--------|------|-----------|
-| HomePage | `/` | Hero, Features, ViewsShowcase (resumen), HowItWorks, Comparison, Infrastructure, FAQ, GetStarted |
-| FeaturesPage | `/funcionalidades` | ViewsShowcase completo + Features + Comparison |
-| ContactPage | `/contacto` | ContactForm + FAQ + DownloadSection |
-| NotFoundPage | `*` | 404 con fallback a home |
+| HomePage | `/` | Hero (con AmbientGlow) + Features + HowItWorks + Comparison + DashboardSection + TechStack + CTA cierre |
+| FeaturesPage | `/funcionalidades` | Header (con AmbientGlow) + GetStarted + Infrastructure + ViewsShowcase + CTA |
+| ContactPage | `/contacto` | Header (con AmbientGlow) + pasos de entrega + DownloadSection + FAQ + CTA final + ContactForm |
+| NotFoundPage | `*` | 404 (con AmbientGlow) con fallback a home |
+
+> Todos los headers de páginas comparten el fondo ambiental via `AmbientGlow` (ver arriba).

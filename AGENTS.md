@@ -72,7 +72,8 @@ src/
 ├── pages/                 # HomePage (/), FeaturesPage (/funcionalidades),
 │                          #   ContactPage (/contacto), NotFoundPage (*)
 ├── components/            # Navbar, Hero, ViewsShowcase, Comparison, FAQ,
-│                          #   DeviceMockup (SVG laptop/mobile), ContactForm, ...
+│                          #   DeviceMockup (SVG laptop/mobile), ContactForm,
+│                          #   AmbientGlow (fondo ambiental de headers), ...
 ├── data/views.ts          # 18 vistas del showcase (fuente de verdad del catálogo)
 ├── types.ts               # Tipos compartidos (ViewEntry, FAQItem, ...)
 ├── lib/                   # detectOS.ts, imageUtils.tsx (AvifImg)

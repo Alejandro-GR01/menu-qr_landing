@@ -24,10 +24,12 @@ La landing es **multi-página** con React Router (BrowserRouter + fallback `404.
 
 | Ruta | Página | Contenido |
 |------|--------|-----------|
-| `/` | Home | Hero con mockups superpuestos, features, comparación papel/nube/local, dashboard admin, infraestructura, tech stack |
-| `/funcionalidades` | Feature showcase | Galería de las **18 vistas reales de la app** en mockups SVG (LaptopFrame + MobileFrame) con tabs y filtros |
-| `/contacto` | Contacto | Formulario + contacto directo por email (el `.exe` de Windows se entrega tras el contacto) |
+| `/` | Home | Hero (mockups desktop/mobile + fondo ambiental), features, cómo funciona, comparación papel/nube/local, dashboard admin, tech stack, CTA |
+| `/funcionalidades` | Feature showcase | Header + primeros pasos + infraestructura red local + galería de las **18 vistas reales de la app** en mockups SVG (LaptopFrame + MobileFrame) con tabs y filtros |
+| `/contacto` | Contacto | Header + pasos de entrega + formulario + FAQ + contacto directo por email (el `.exe` de Windows se entrega tras el contacto) |
 | `*` | 404 | Página aislada full-viewport con CTA único |
+
+> Todos los headers comparten el **fondo ambiental** del hero (glow naranja + dorado + grilla) vía el componente `AmbientGlow`.
 
 ## Stack
 

@@ -1,5 +1,6 @@
 import { ContactButton } from "@/components/ContactButton";
 import { LaptopFrame, MobileFrame } from "@/components/DeviceMockup";
+import { AmbientGlow } from "@/components/AmbientGlow";
 import { AvifImg } from "@/lib/imageUtils";
 import { ArrowDown, QrCode } from "lucide-react";
 
@@ -8,23 +9,7 @@ export function Hero() {
   return (
     <section className="min-h-dvh flex flex-col items-center justify-center px-4 pt-24 pb-12 md:pb-16 relative overflow-hidden">
       {/* Background layers - centrado perfecto */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        {/* Glow principal - centro exacto */}
-        <div className="absolute w-[800px] h-[800px] sm:w-[1000px] sm:h-[1000px] rounded-full bg-primary/5 blur-[150px]" />
-
-        {/* Glow secundario - offset sutil */}
-        <div className="absolute w-[500px] h-[500px] -translate-x-1/4 translate-y-1/4 rounded-full bg-gold/5 blur-[100px]" />
-
-        {/* Grilla de fondo sutil */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, #fafafa 1px, transparent 0)",
-            backgroundSize: "48px 48px",
-          }}
-        />
-      </div>
+      <AmbientGlow />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto">

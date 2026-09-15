@@ -6,6 +6,7 @@ import {
 } from '@/components/ContactButton'
 import { ContactForm } from '@/components/ContactForm'
 import { DownloadSection } from '@/components/DownloadSection'
+import { AmbientGlow } from '@/components/AmbientGlow'
 import { FAQ } from '@/components/FAQ'
 import { Mail, Download, Settings, CheckCircle } from 'lucide-react'
 import type { FAQItem } from '@/types'
@@ -117,8 +118,9 @@ export function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-8 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
+      <section className="relative overflow-hidden pt-32 pb-8 px-4 text-center">
+        <AmbientGlow />
+        <div className="relative z-10 max-w-3xl mx-auto">
           <h1 className="text-[clamp(1.75rem,5vw,3.5rem)] font-bold text-text-primary leading-tight animate-fade-in-up">
             Solicitas tu <span className="text-primary">Menu QR</span>
           </h1>
